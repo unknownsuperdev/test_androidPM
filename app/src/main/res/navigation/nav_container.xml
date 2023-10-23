@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_container"
+    app:startDestination="@id/ordersContainerFragment">
+
+    <include app:graph="@navigation/nav_orders" />
+
+    <fragment
+        android:id="@+id/ordersContainerFragment"
+        android:name="ru.tripster.guide.ui.bottomNavigation.orders.OrdersContainerFragment"
+        android:label="OrdersContainerFragment" />
+    <fragment
+        android:id="@+id/calendarContainerFragment"
+        android:name="ru.tripster.guide.ui.bottomNavigation.calendar.CalendarContainerFragment"
+        android:label="CalendarContainerFragment" />
+    <fragment
+        android:id="@+id/profileContainerFragment"
+        android:name="ru.tripster.guide.ui.bottomNavigation.profile.ProfileContainerFragment"
+        android:label="ProfileContainerFragment" />
+</navigation>

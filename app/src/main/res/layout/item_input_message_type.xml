@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateOfMessage"
+        style="@style/Text.12.400.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_12"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Сегодня" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_50"
+        android:layout_marginEnd="@dimen/space_8"
+        app:layout_constraintTop_toBottomOf="@id/dateOfMessage">
+
+        <ru.tripster.guide.customviews.TextViewContainerFlowLayout
+            android:id="@+id/container"
+            style="@style/Background.light.blue.17.12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_4"
+            android:paddingHorizontal="@dimen/space_12"
+            android:paddingVertical="@dimen/space_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/message"
+                style="@style/Text.17.400"
+                app:lineHeight="@dimen/space_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Елена, добрый день!" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date"
+                    style="@style/Text.12.400.Gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginBottom="-1dp"
+                    android:maxLines="1"
+                    tools:text="23:49" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_gravity="bottom"
+                    android:id="@+id/readStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_3" />
+            </LinearLayout>
+
+        </ru.tripster.guide.customviews.TextViewContainerFlowLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/debugTitle"
+        style="@style/Text.17.400.black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_38"
+        android:text="@string/debug_title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firebaseAnalytics"
+        style="@style/Text.17.400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_20"
+        android:text="@string/is_prod_analytics_enabled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/debugTitle" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/prodEnabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:theme="@style/Switch.gray80.green"
+        app:layout_constraintBottom_toBottomOf="@id/firebaseAnalytics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/firebaseAnalytics" />
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_36"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_43"
+        android:background="@drawable/tab_background"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/space_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firebaseAnalytics">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/stagingTab"
+            style="@style/Text.17.400.black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/shape_white_rectangle_8"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingVertical="@dimen/space_3"
+            android:text="@string/staging"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/prodTab"
+            style="@style/Text.17.400.black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingVertical="@dimen/space_3"
+            android:text="@string/production" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customTab"
+            style="@style/Text.17.400.black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingVertical="@dimen/space_3"
+            android:text="@string/custom" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/baseUrlDesc"
+        style="@style/Text.17.400.tomat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_5"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/inputBaseUrl"
+        style="@style/Text.17.400.black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_40"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:backgroundTint="@color/white"
+        android:hint="@string/input_url"
+        android:textColorHint="@color/gray_80"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseUrlDesc" />
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@color/ten_percent_of_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputBaseUrl" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBox"
+        style="@style/Text.17.400.black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_24"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@color/transparent"
+        android:button="@drawable/selector_check_box"
+        android:paddingStart="@dimen/space_8"
+        android:text="@string/save_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@color/ten_percent_of_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/crashEventTitle"
+        style="@style/Text.17.400.black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="@string/crash_event_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_15"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/crashEventTitle">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crashBtn"
+            style="@style/Background.green"
+            android:layout_width="@dimen/space_93"
+            android:layout_height="@dimen/space_37"
+            android:layout_weight="1"
+            android:text="@string/crash" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/anrBtn"
+            style="@style/Background.green"
+            android:layout_width="@dimen/space_93"
+            android:layout_height="@dimen/space_37"
+            android:layout_marginStart="27dp"
+            android:layout_weight="1"
+            android:text="@string/anr" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nonFatalBtn"
+            style="@style/Background.green"
+            android:layout_width="@dimen/space_93"
+            android:layout_height="@dimen/space_37"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/space_23"
+            android:layout_weight="1"
+            android:text="@string/non_fatal" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/closeBtn"
+        style="@style/Background.green"
+        android:layout_width="@dimen/space_93"
+        android:layout_height="@dimen/space_37"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginBottom="@dimen/space_30"
+        android:text="@string/close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/okBtn"
+        style="@style/Background.green"
+        android:layout_width="@dimen/space_93"
+        android:layout_height="@dimen/space_37"
+        android:layout_marginEnd="@dimen/space_15"
+        android:layout_marginBottom="@dimen/space_30"
+        android:text="@string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

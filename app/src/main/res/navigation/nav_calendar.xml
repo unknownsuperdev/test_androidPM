@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_calendar"
+    app:startDestination="@+id/calendarOrderFragment">
+
+    <fragment
+        android:id="@+id/calendarOrderFragment"
+        android:name="ru.tripster.guide.ui.fragments.calendar.CalendarOrderFragment"
+        android:label="CalendarOrderFragment">
+<!--        <action-->
+<!--            android:id="@+id/action_calendarOrderFragment_to_calendarDateOrderFragment"-->
+<!--            app:destination="@id/calendarDateOrderFragment"-->
+<!--            app:enterAnim="@anim/slide_in_from_right"-->
+<!--            app:exitAnim="@anim/slide_out_from_left"-->
+<!--            app:popEnterAnim="@anim/slide_in_from_left"-->
+<!--            app:popExitAnim="@anim/slide_out_to_right"/>-->
+
+        <action
+            android:id="@+id/action_calendarOrderFragment_to_calendarDateOrderFragment"
+            app:destination="@id/calendarDateOrderFragment" />
+
+        <action
+            android:id="@+id/action_calendarOrderFragment_to_calendarFiltrationBottomSheet"
+            app:destination="@id/calendarFiltrationBottomSheet" />
+        <action
+            android:id="@+id/action_calendarOrderFragment_to_calendarCloseTimeFragment"
+            app:destination="@id/calendarCloseTimeFragment" />
+        <action
+            android:id="@+id/action_calendarOrderFragment_to_calendarChooseDateFragment"
+            app:destination="@id/calendarChooseDateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendarDateOrderFragment"
+        android:name="ru.tripster.guide.ui.fragments.calendar.orders.CalendarDateOrderFragment"
+        android:label="CalendarDateOrderFragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="experienceId"
+            app:argType="integer" />
+        <argument
+            android:name="experienceTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_calendarDateOrderFragment_to_calendarFiltrationBottomSheet"
+            app:destination="@id/calendarFiltrationBottomSheet" />
+
+        <action
+            android:id="@+id/action_calendarDateOrderFragment_to_confirmOrderFragment"
+            app:destination="@id/confirmOrderFragment" />
+        <action
+            android:id="@+id/action_calendarDateOrderFragment_to_calendarCloseTimeFragment"
+            app:destination="@id/calendarCloseTimeFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/calendarFiltrationBottomSheet"
+        android:name="ru.tripster.guide.ui.fragments.calendar.CalendarFiltrationBottomSheet"
+        android:label="CalendarFiltrationBottomSheet">
+        <argument
+            android:name="navigationType"
+            app:argType="string" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/calendarCloseTimeFragment"
+        android:name="ru.tripster.guide.ui.fragments.calendar.closeTime.CalendarCloseTimeFragment"
+        android:label="CalendarCloseTimeFragment">
+
+        <argument
+            android:name="date"
+            app:argType="ru.tripster.domain.model.calendar.SelectedIntervalData" />
+
+        <action
+            android:id="@+id/action_calendarCloseTimeFragment_to_calendarFiltrationBottomSheet"
+            app:destination="@id/calendarFiltrationBottomSheet" />
+        <action
+            android:id="@+id/action_calendarCloseTimeFragment_to_calendarChooseDateFragment"
+            app:destination="@id/calendarChooseDateFragment" />
+        <action
+            android:id="@+id/action_calendarCloseTimeFragment_to_calendarOrderFragment"
+            app:destination="@id/calendarOrderFragment"
+            app:popUpTo="@id/calendarCloseTimeFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/calendarChooseDateFragment"
+        android:name="ru.tripster.guide.ui.fragments.calendar.chooseDate.CalendarChooseDateFragment"
+        android:label="CalendarChooseDateFragment">
+
+        <argument
+            android:name="startDate"
+            app:argType="string" />
+
+        <argument
+            android:name="endDate"
+            app:argType="string" />
+
+    </fragment>
+</navigation>

@@ -1,0 +1,21 @@
+plugins {
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+
+}
+
+dependencies {
+
+    implementation project(path: ':core')
+    implementation project(path: ':entities')
+    testImplementation (test.junit)
+    androidTestImplementation (androidTest.androidxJunit)
+    androidTestImplementation (androidTest.androidxEspressoCore)
+    implementation(androidXLibraries.coreKtx)
+    implementation(libraries.koinAndroid)
+    implementation(libraries.coroutines)
+    implementation(libraries.gsonConverter)
+    implementation(androidXLibraries.paging)
+    implementation(androidXLibraries.roomRuntime)
+    kapt (androidXLibraries.roomCompiler)
+}

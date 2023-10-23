@@ -1,0 +1,11 @@
+
+dependencies {
+
+    testImplementation (test.junit)
+    androidTestImplementation (androidTest.androidxJunit)
+    androidTestImplementation (androidTest.androidxEspressoCore)
+    implementation(androidXLibraries.coreKtx)
+    implementation(libraries.koinAndroid)
+    implementation(libraries.coroutines)
+    implementation(androidXLibraries.paging)
+}

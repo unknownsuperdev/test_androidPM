@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    motion:layoutDescription="@xml/fragment_order_details_group_scene">
+
+    <FrameLayout
+        android:id="@+id/containerShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="10dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toTopOf="parent"
+        tool:visibility="visible">
+
+        <include
+            android:id="@+id/shimmer"
+            layout="@layout/shimmer_order_details_tour" />
+    </FrameLayout>
+
+    <ru.tripster.guide.customviews.ToolbarWithStatus
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:background="@color/white"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_1"
+        android:alpha="0"
+        android:background="@color/gray_90"
+        motion:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivToolbarImage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_264"
+        android:background="@drawable/order_page_gradient"
+        android:foreground="@drawable/order_page_gradient"
+        android:scaleType="fitXY"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backButton"
+        android:layout_width="@dimen/space_48"
+        android:layout_height="@dimen/space_48"
+        android:layout_marginStart="@dimen/space_8"
+        android:background="@color/transparent"
+        android:src="@drawable/arrow_left_with_paddings"
+        android:tint="@color/white"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toTopOf="@+id/toolbar"
+        motion:layout_constraintBottom_toBottomOf="@+id/toolbar"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/statusOfBooking"
+        style="@style/Text.14.400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_28"
+        android:paddingHorizontal="@dimen/space_6"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toBottomOf="@+id/backButton"
+        tool:text="@string/booking_is_closed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        style="@style/Text.20.700.white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_4"
+        android:layout_marginEnd="@dimen/space_16"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:paddingBottom="@dimen/space_24"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toBottomOf="@+id/statusOfBooking"
+        motion:lineHeight="@dimen/space_26"
+        tool:text="Ленинградские коммуналки — снаружи и изнутри" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        android:background="@drawable/shape_topradius_rectangle"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintEnd_toEndOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toBottomOf="@+id/titleTv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerDetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_0"
+            android:layout_marginTop="@dimen/space_16"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tourHourDate"
+                style="@style/Text.20.700"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"
+                tool:text="10:30–16:30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tourDateDuration"
+                style="@style/Text.17.400"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_20"
+                android:layout_marginStart="@dimen/space_16"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/tourHourDate"
+                tool:text="7 апр, чт" />
+
+
+            <LinearLayout
+                android:id="@+id/containerAllDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_24"
+                android:orientation="vertical"
+                android:visibility="gone"
+                motion:layout_constraintStart_toEndOf="@+id/tourHourDate"
+                motion:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/availablePlaces"
+                        style="@style/Text.20.700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tool:text="4 из 4" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:background="@color/transparent"
+                        android:src="@drawable/ic_edit" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Text.17.400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_20"
+                    android:text="@string/places_available" />
+
+            </LinearLayout>
+
+            <ru.tripster.guide.customviews.TouristItemInGroup
+                android:id="@+id/touristItemInGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/tourDateDuration" />
+
+            <LinearLayout
+                android:id="@+id/containerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_24"
+                android:layout_marginBottom="@dimen/space_36"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/space_16"
+                android:visibility="gone"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/touristItemInGroup">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/openBooking"
+                    style="@style/Background.green.17"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_48"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:text="@string/open_booking" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/closeBooking"
+                    style="@style/Background.gray.17.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_48"
+                    android:layout_marginBottom="@dimen/space_8"
+                    android:text="@string/close_booking" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/contactSupport"
+                    style="@style/Background.gray.17.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_48"
+                    android:text="@string/contact_support" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/containerError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="@dimen/space_30"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/error"
+            layout="@layout/include_order_issue" />
+    </FrameLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

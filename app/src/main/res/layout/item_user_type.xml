@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgUser"
+        android:layout_width="@dimen/space_100"
+        android:layout_height="@dimen/space_100"
+        android:layout_marginTop="@dimen/space_24"
+        android:elevation="@dimen/space_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:srcCompat="@drawable/profpic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameUser"
+        style="@style/Text.20.700"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_12"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgUser"
+        tool:text="Елена" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/infoUser"
+        style="@style/Text.14.400"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="-1dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameUser"
+        tool:text="3 участника · €75" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textChatResponse"
+        style="@style/Text.14.400.Gray"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_12"
+        android:layout_marginBottom="@dimen/space_24"
+        android:gravity="center"
+        android:text="@string/text_chat_response"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoUser"
+        app:lineHeight="@dimen/space_20" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

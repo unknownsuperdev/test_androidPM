@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/legendLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/monday"
+        style="@style/Text.17.400.gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="пн" />
+
+    <TextView
+        android:id="@+id/tuesday"
+        style="@style/Text.17.400.gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="вт" />
+
+    <TextView
+        android:id="@+id/wednesday"
+        style="@style/Text.17.400.gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="ср" />
+
+    <TextView
+        android:id="@+id/thursday"
+        style="@style/Text.17.400.gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="чт" />
+
+    <TextView
+        android:id="@+id/friday"
+        style="@style/Text.17.400.gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="пт" />
+
+    <TextView
+        android:id="@+id/saturday"
+        style="@style/Text.17.400.tomat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="сб" />
+
+    <TextView
+        android:id="@+id/sunday"
+        style="@style/Text.17.400.tomat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="вс" />
+
+</LinearLayout>

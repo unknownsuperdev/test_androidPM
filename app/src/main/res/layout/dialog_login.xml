@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background_inset">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        style="@style/Text.24.400"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_24"
+        android:layout_marginTop="@dimen/space_24"
+        android:text="@string/loginDialogTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bodyTv"
+        style="@style/Text.14.400.Gray_20"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_24"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="@string/loginDialogText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/okBtn"
+        style="@style/Text.14.500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/space_34"
+        android:layout_marginEnd="@dimen/space_36"
+        android:text="@string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cancelBtn"
+        style="@style/Text.14.500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:layout_marginEnd="@dimen/space_36"
+        app:layout_constraintBottom_toBottomOf="@+id/okBtn"
+        app:layout_constraintEnd_toStartOf="@+id/okBtn"
+        app:layout_constraintTop_toTopOf="@+id/okBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

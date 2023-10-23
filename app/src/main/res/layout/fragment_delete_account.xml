@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="false">
+
+    <ru.tripster.guide.customviews.ToolbarSingleTitle
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/deleteAccountTitle"
+        style="@style/Text.17.400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:text="@string/delete_account_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="@dimen/space_24" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/deleteAccountCondition"
+        style="@style/Text.17.400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="@string/delete_account_condition"
+        app:layout_constraintTop_toBottomOf="@+id/deleteAccountTitle"
+        app:lineHeight="@dimen/space_24" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/deleteAccountField"
+        style="@style/Background.gray.stroke.all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="top"
+        android:maxLines="1"
+        android:overScrollMode="always"
+        android:paddingHorizontal="@dimen/space_22"
+        android:paddingVertical="@dimen/space_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteAccountCondition"
+        app:lineHeight="@dimen/space_24" />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteAccount"
+            style="@style/Background.tomat.17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginBottom="@dimen/space_8"
+            android:text="@string/delete_account"
+            app:layout_constraintBottom_toTopOf="@+id/cancel" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/space_16"
+            android:layout_height="@dimen/space_16"
+            android:elevation="7dp"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/deleteAccount"
+            app:layout_constraintEnd_toEndOf="@id/deleteAccount"
+            app:layout_constraintStart_toStartOf="@id/deleteAccount"
+            app:layout_constraintTop_toTopOf="@id/deleteAccount" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel"
+            style="@style/Background.gray.17.8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginBottom="@dimen/space_8"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppBottomSheetDialogTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Text.20.700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_marginEnd="@dimen/space_28"
+        android:lineHeight="@dimen/space_24"
+        app:layout_constraintEnd_toStartOf="@+id/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/carry_out_more_than_60_percent_of_orders" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_close_send_contacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/seeContactDesc"
+        style="@style/Text.17.400"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineHeight="@dimen/space_24"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingTop="@dimen/space_15"
+        android:paddingBottom="@dimen/space_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="@string/can_see_contact_desc" />
+</androidx.constraintlayout.widget.ConstraintLayout>

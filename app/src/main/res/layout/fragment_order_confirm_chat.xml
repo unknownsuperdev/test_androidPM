@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ru.tripster.guide.customviews.ToolbarDoubleTitle
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subTitle="7 апр, чт 12:00–18:00"
+            app:title="Многогранный Стамбул" />
+
+        <ProgressBar
+            android:id="@+id/loadingIcon"
+            android:layout_width="@dimen/space_20"
+            android:layout_height="@dimen/space_20"
+            app:layout_constraintBottom_toTopOf="@+id/containerOfInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:visibility="gone" />
+
+        <include
+            android:id="@+id/issue"
+            layout="@layout/include_order_issue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_0"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/loadMoreProgress"
+            android:layout_width="@dimen/space_20"
+            android:layout_height="@dimen/space_20"
+            android:layout_marginVertical="@dimen/space_18"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/rVMessaging"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rVMessaging"
+            android:layout_width="@dimen/space_0"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/connectionProgress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loadMoreProgress" />
+
+        <ProgressBar
+            android:id="@+id/connectionProgress"
+            android:layout_width="@dimen/space_20"
+            android:layout_height="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_18"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/containerOfInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rVMessaging" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerOfInput"
+            style="@style/Background.gray.70"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/connectionProgress">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/inputMessage"
+                style="@style/Background.stroke.gray.cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:gravity="top"
+                android:hint="@string/message"
+                android:inputType="textMultiLine"
+                android:maxLines="7"
+                android:paddingStart="@dimen/space_12"
+                android:paddingEnd="@dimen/space_56"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="@dimen/space_24" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_16"
+                android:src="@drawable/ic_send"
+                app:layout_constraintBottom_toBottomOf="@id/inputMessage"
+                app:layout_constraintEnd_toEndOf="@id/inputMessage"
+                app:layout_constraintTop_toTopOf="@id/inputMessage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/containerError"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:background="@color/white"
+            android:paddingBottom="?attr/actionBarSize"
+            android:visibility="gone">
+
+            <include android:id="@+id/error" layout="@layout/include_order_issue" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

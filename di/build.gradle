@@ -1,0 +1,31 @@
+plugins {
+    id 'kotlin-kapt'
+}
+
+android {
+    flavorDimensions "named"
+    productFlavors{
+        dev{
+            dimension ="named"
+        }
+        prod{
+            dimension ="named"
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':core')
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    testImplementation(test.junit)
+    androidTestImplementation(androidTest.androidxJunit)
+    androidTestImplementation(androidTest.androidxEspressoCore)
+    implementation(androidXLibraries.coreKtx)
+    implementation(androidXLibraries.roomRuntime)
+    kapt (androidXLibraries.roomCompiler)
+    implementation(libraries.koinAndroid)
+    implementation(libraries.retrofit)
+    implementation(libraries.loggingInterceptor)
+    implementation(libraries.gsonConverter)
+}

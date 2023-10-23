@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_gray20_rectangle_12"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingHorizontal="@dimen/space_12"
+    android:paddingVertical="@dimen/space_8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/checkMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/space_8"
+        android:src="@drawable/ic_check_circle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/issueText"
+        style="@style/Text.14.400.white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_internet_toast" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+
+plugins {
+    id 'kotlin-kapt'
+
+}
+
+dependencies {
+    implementation(libraries.gsonConverter)
+    implementation(androidXLibraries.roomRuntime)
+    kapt (androidXLibraries.roomCompiler)
+    implementation(androidXLibraries.coreKtx)
+
+}

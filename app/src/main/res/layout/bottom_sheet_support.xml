@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragments.profile.SupportBottomSheet">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Text.20.700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="@string/support_title"
+        app:layout_constraintEnd_toStartOf="@+id/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_close_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/supportInfoTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_15"
+        android:fontFamily="@font/roboto_regular_400"
+        android:lineHeight="@dimen/size_24"
+        tools:text="@string/support_info_text"
+        android:textColor="@color/gray_20"
+        android:textSize="@dimen/size_17"
+        app:layout_constraintEnd_toEndOf="@id/close"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/telegram"
+        style="@style/support_bottom_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_telegram"
+        android:text="@string/telegram"
+        app:layout_constraintEnd_toEndOf="@id/supportInfoTv"
+        app:layout_constraintStart_toStartOf="@id/supportInfoTv"
+        app:layout_constraintTop_toBottomOf="@id/supportInfoTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vkSupport"
+        style="@style/support_bottom_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_vk"
+        android:text="@string/vk_text"
+        app:layout_constraintEnd_toEndOf="@id/telegram"
+        app:layout_constraintStart_toStartOf="@id/telegram"
+        app:layout_constraintTop_toBottomOf="@id/telegram" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mail"
+        style="@style/support_bottom_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_mail"
+        android:text="@string/mail_text"
+        app:layout_constraintEnd_toEndOf="@id/vkSupport"
+        app:layout_constraintStart_toStartOf="@id/vkSupport"
+        app:layout_constraintTop_toBottomOf="@id/vkSupport" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phone"
+        style="@style/support_bottom_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_13"
+        android:drawableStart="@drawable/ic_phone"
+        android:text="@string/phone_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/mail"
+        app:layout_constraintStart_toStartOf="@id/mail"
+        app:layout_constraintTop_toBottomOf="@id/mail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

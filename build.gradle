@@ -1,0 +1,66 @@
+buildscript {
+    apply(from: "$rootDir/dependencies.gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(classpaths.safeArgs)
+        classpath(classpaths.googleServices)
+        classpath(classpaths.firebaseCrashlytics)
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+subprojects {
+
+    if (project.name == "app") {
+        apply(plugin: "com.android.application")
+        android {
+            defaultConfig {
+                applicationId application.id
+            }
+        }
+    } else {
+        apply(plugin: "com.android.library")
+        apply(plugin: "kotlin-android")
+    }
+
+    android {
+        defaultConfig {
+            compileSdk application.maxApi
+            minSdk application.minApi
+            targetSdk application.targetSdk
+            versionCode application.versionCode
+            versionName application.versionName
+            Properties properties = new Properties()
+
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            manifestPlaceholders = [MAPS_API_KEY: "${properties.getProperty('MAPS_API_KEY')}"]
+        }
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+
+
+//    dependencies {
+//        implementation(libraries.kotlinStdLib)
+//    }
+}

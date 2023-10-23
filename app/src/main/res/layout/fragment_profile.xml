@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelTextTv"
+            style="@style/Text.20.700.black"
+            android:layout_width="0dp"
+            android:layout_height="74dp"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:paddingTop="@dimen/space_15"
+            android:text="@string/profile_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="@dimen/space_26" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/profileNameTv"
+            style="@style/Text.32.700"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelTextTv"
+            app:lineHeight="@dimen/space_40"
+            tools:text="Привет, Константин Нереуцкий" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/profileMailTv"
+            style="@style/Text.17.400.gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:layout_marginHorizontal="@dimen/space_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileNameTv"
+            app:lineHeight="@dimen/space_24"
+            tools:text="konstantin.nereytsky@gmail.com" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/profileIv"
+            android:layout_width="@dimen/space_100"
+            android:layout_height="@dimen/space_100"
+            android:layout_marginTop="@dimen/space_32"
+            app:layout_constraintEnd_toEndOf="@+id/profileMailTv"
+            app:layout_constraintStart_toStartOf="@+id/profileMailTv"
+            app:layout_constraintTop_toBottomOf="@id/profileMailTv"
+            tools:src="@drawable/ic_account" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/supportTv"
+            style="@style/Text.14.400"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/gray_80"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/space_16"
+            android:text="@string/support_text"
+            app:layout_constraintBottom_toTopOf="@id/deleteAccount"
+            app:layout_constraintEnd_toEndOf="@id/profileMailTv"
+            app:layout_constraintStart_toStartOf="@id/profileMailTv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deleteAccount"
+            style="@style/Text.14.400"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/gray_80"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/space_16"
+            android:text="@string/deleting_account"
+            app:layout_constraintBottom_toTopOf="@+id/logoutTv"
+            app:layout_constraintEnd_toEndOf="@id/profileMailTv"
+            app:layout_constraintStart_toStartOf="@id/profileMailTv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/logoutTv"
+            style="@style/Text.14.400.tomat"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/gray_80"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/space_16"
+            android:text="@string/logout_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/profileMailTv"
+            app:layout_constraintStart_toStartOf="@id/profileMailTv" />
+
+        <FrameLayout
+            android:id="@+id/errorContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/labelTextTv"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <include
+                android:id="@+id/issue"
+                layout="@layout/include_order_issue"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
