@@ -19,10 +19,16 @@ class SearchViewModel(
     private val searchHistoryUseCase: SearchHistoryUseCase,
 ) : BaseViewModel() {
 
-    private val _searchResultsList = MutableStateFlow<List<SearchMainItem>?>(null)
+    private val _searchResultsList: MutableStateFlow<List<SearchMainItem>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val searchResultsList = _searchResultsList.asStateFlow()
 
-    private val _recentInfo = MutableStateFlow(false)
+    private val _recentInfo: MutableStateFlow<Boolean> by lazy {
+        MutableStateFlow(false)
+    }
     val recentInfo = _recentInfo.asStateFlow()
 
     fun getSearchResults(word: String?, searchByClick: Boolean) {

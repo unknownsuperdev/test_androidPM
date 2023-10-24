@@ -12,13 +12,23 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class DownloadedBooksViewModel : BaseViewModel() {
-    private val _currentReadBooks = MutableStateFlow<List<BooksWithReadProgressBookData>?>(null)
+    private val _currentReadBooks: MutableStateFlow<List<BooksWithReadProgressBookData>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val currentReadBooks = _currentReadBooks.asStateFlow()
 
-    private val _nextInLineBooks = MutableStateFlow<List<NextInLineBooksData>?>(null)
+    private val _nextInLineBooks: MutableStateFlow<List<NextInLineBooksData>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val nextInLineBooks = _nextInLineBooks.asStateFlow()
 
-    private val _afterDeleteCurrentReadBook = MutableSharedFlow<Unit?>()
+    private val _afterDeleteCurrentReadBook: MutableSharedFlow<Unit?> by lazy {
+        MutableSharedFlow()
+    }
     val afterDeleteCurrentReadBook = _afterDeleteCurrentReadBook.asSharedFlow()
 
     var message = ""

@@ -12,7 +12,6 @@ class DataStoreServiceImpl(private val context: Context) : DataStoreService {
 	private val result = context.dataStore
 	private val userAuthenticationKey = "userAuthenticationKey"
 	private val guestAuthenticationKey = "guestAuthenticationKey"
-	private val welcomeScreenOpenKey = "welcomeScreenOpenKey"
 
 	private suspend fun set(key: String, value: Any?) {
 		when (value) {
@@ -81,11 +80,12 @@ class DataStoreServiceImpl(private val context: Context) : DataStoreService {
 	}
 
 	override suspend fun setGuestToken(token: String) { set(guestAuthenticationKey,token) }
+
 	override fun getGuestToken(): Flow<String?> = get(guestAuthenticationKey)
 
 	override suspend fun setUserToken(token: String) { set(userAuthenticationKey, token) }
+
 	override fun getUserToken(): Flow<String?> = get(userAuthenticationKey)
 
-	override suspend fun setIsWelcomeScreenOpened(isOpened: Boolean) {set(welcomeScreenOpenKey,isOpened)}
-	override fun getIsWelcomeScreenOpened(): Flow<Boolean?> = get(welcomeScreenOpenKey)
+
 }

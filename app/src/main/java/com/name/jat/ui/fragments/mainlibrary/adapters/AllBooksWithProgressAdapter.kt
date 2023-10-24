@@ -14,8 +14,6 @@ import com.name.jat.appbase.adapter.BaseViewHolder
 import com.name.jat.utils.setResizableText
 import com.name.jat.databinding.ItemAllBookWithProgressBinding
 import com.name.jat.extensions.dpToPx
-import com.name.jat.utils.Constants
-import com.name.jat.utils.Constants.Companion.MAX_LINES
 import com.name.jat.utils.Constants.Companion.MAX_READ_PROGRESS
 
 class AllBooksWithProgressAdapter(
@@ -51,7 +49,7 @@ class AllBooksWithProgressAdapter(
                 val decryptionText = item.bookInfo
                 description.setResizableText(
                     decryptionText,
-                    MAX_LINES,
+                    4,
                     true,
                     collapseText = false,
                     action = {

@@ -8,6 +8,7 @@ import androidx.navigation.NavDirections
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.name.domain.model.BestsellersDataModel
 import com.name.jat.R
@@ -47,7 +48,11 @@ class BestsellersItemsAdapter(
                 position.text = "${adapterPosition + 1}#"
 
                 if (item.cover.isNotEmpty()) {
-                    val url = GlideUrl(item.cover)
+                    val url = GlideUrl(
+                        item.cover, LazyHeaders.Builder()
+                            .addHeader("User-Agent", "your-user-agent")
+                            .build()
+                    )
                     Glide.with(context)
                         .load(url)
                         .transform(RoundedCorners(context.dpToPx(R.dimen.space_4)))

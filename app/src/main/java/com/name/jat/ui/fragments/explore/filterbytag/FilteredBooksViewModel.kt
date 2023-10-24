@@ -13,13 +13,22 @@ import kotlinx.coroutines.launch
 
 class FilteredBooksViewModel : BaseViewModel() {
 
-    private val _selectedPopularTagsList = MutableStateFlow<List<PopularTagsDataModel>?>(null)
+    private val _selectedPopularTagsList: MutableStateFlow<List<PopularTagsDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val selectedPopularTagsList = _selectedPopularTagsList.asStateFlow()
-
-    private val _bookInfoList = MutableStateFlow<BookInfoAdapterModelList?>(null)
+    private val _bookInfoList: MutableStateFlow<BookInfoAdapterModelList?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val bookInfoList = _bookInfoList.asStateFlow()
 
-    private val _emptyBookList = MutableSharedFlow<Unit?>()
+    private val _emptyBookList: MutableSharedFlow<Unit?> by lazy {
+        MutableSharedFlow()
+    }
     val emptyBookList = _emptyBookList.asSharedFlow()
 
     fun getSuggestedBooksList() {

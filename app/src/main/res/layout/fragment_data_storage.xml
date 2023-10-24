@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_16"
         android:background="@drawable/bg_save_library"
-        android:drawableStart="@drawable/success_checkbox_green"
+        android:drawableStart="@drawable/ic_save_to_library"
         android:drawablePadding="@dimen/space_10"
         android:gravity="center_vertical"
         android:minHeight="@dimen/space_16"

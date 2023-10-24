@@ -20,25 +20,33 @@ class BookSummaryViewModel(
     private val addBookToLibraryUseCase: AddBookToLibraryUseCase,
     private val removeBookFromLibraryUseCase: RemoveBookFromLibraryUseCase
 ) : BaseViewModel() {
-    private val _suggestedBooksList = MutableStateFlow<SuggestedBooksModel?>(null)
+    private val _suggestedBooksList: MutableStateFlow<SuggestedBooksModel?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val suggestedBooksList = _suggestedBooksList.asStateFlow()
 
-    private val _popularTagsList = MutableStateFlow<PopularTagsModel?>(null)
+    private val _popularTagsList: MutableStateFlow<PopularTagsModel?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val popularTagsList = _popularTagsList.asStateFlow()
 
-    private val _readBook = MutableSharedFlow<Unit>()
+    private val _readBook: MutableSharedFlow<Unit> by lazy { MutableSharedFlow() }
     val readBook = _readBook.asSharedFlow()
 
-    private val _addlike = MutableSharedFlow<Unit>()
+    private val _addlike: MutableSharedFlow<Unit> by lazy { MutableSharedFlow() }
     val addlike = _addlike.asSharedFlow()
 
-    private val _removeLike = MutableSharedFlow<Unit>()
+    private val _removeLike: MutableSharedFlow<Unit> by lazy { MutableSharedFlow() }
     val removeLike = _removeLike.asSharedFlow()
 
-    private val _addBookToLib = MutableSharedFlow<Unit>()
+    private val _addBookToLib: MutableSharedFlow<Unit> by lazy { MutableSharedFlow() }
     val addBookToLib = _addBookToLib.asSharedFlow()
 
-    private val _removeBookFromLib = MutableSharedFlow<Unit>()
+    private val _removeBookFromLib: MutableSharedFlow<Unit> by lazy { MutableSharedFlow() }
     val removeBookFromLib = _removeBookFromLib.asSharedFlow()
 
     var likeBook = false
@@ -75,8 +83,8 @@ class BookSummaryViewModel(
 
     fun updateSuggestedBooksList(bookId: Long, isAddedLibrary: Boolean) {
         viewModelScope.launch {
-            if (isAddedLibrary) {
-                when (addBookToLibraryUseCase(bookId)) {
+            if (!isAddedLibrary) {
+                when (removeBookFromLibraryUseCase(bookId)) {
                     is ActionResult.Success -> {
                         updateLibraryBooksList(
                             bookId,
@@ -88,7 +96,7 @@ class BookSummaryViewModel(
                     }
                 }
             } else {
-                when (removeBookFromLibraryUseCase(bookId)) {
+                when (addBookToLibraryUseCase(bookId)) {
                     is ActionResult.Success -> {
                         updateLibraryBooksList(
                             bookId,

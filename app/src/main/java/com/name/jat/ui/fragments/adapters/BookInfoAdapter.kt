@@ -13,7 +13,6 @@ import com.name.jat.appbase.adapter.BaseAdapter
 import com.name.jat.appbase.adapter.BaseViewHolder
 import com.name.jat.databinding.ItemMostPopularStoriesBinding
 import com.name.jat.extensions.dpToPx
-import com.name.jat.utils.Constants.Companion.MAX_LINES
 import com.name.jat.utils.setResizableText
 
 class BookInfoAdapter(
@@ -46,7 +45,7 @@ class BookInfoAdapter(
                 val decryptionText = item.bookInfo
                 description.setResizableText(
                     decryptionText,
-                    MAX_LINES,
+                    4,
                     true,
                     collapseText = false,
                     action = {

@@ -25,13 +25,10 @@ import com.name.jat.ui.fragments.mainlibrary.finished.SeeAllFinishedBooksViewMod
 import com.name.jat.ui.fragments.search.SearchMainViewModel
 import com.name.jat.ui.fragments.search.defaultpage.SearchDefaultPageViewModel
 import com.name.jat.ui.fragments.search.mainsearch.SearchViewModel
-import com.name.jat.ui.fragments.reader.ReaderViewModel
-import com.name.jat.ui.fragments.reader.ToolsViewModel
+import com.name.jat.ui.reader.ReaderViewModel
+import com.name.jat.ui.reader.ToolsViewModel
 import com.name.jat.ui.fragments.explore.filterbytag.FilterByPopularTagsViewModel
 import com.name.jat.ui.fragments.explore.filterbytag.FilteredBooksViewModel
-import com.name.jat.ui.fragments.onboarding.ChooseFavoriteThemeViewMode
-import com.name.jat.ui.fragments.onboarding.SelectionBooksViewModel
-import com.name.jat.ui.fragments.onboarding.SplashViewModel
 import com.name.jat.ui.fragments.profile.ProfileViewModel
 import com.name.jat.ui.fragments.profile.editprofile.EditProfileViewModel
 import com.name.jat.ui.fragments.profile.purchasehistory.PurchaseHistoryViewModel
@@ -71,9 +68,6 @@ val viewModelModule = module {
     viewModel { ReadingModeViewModel(get(),get()) }
     viewModel { AutoUnlockViewModel(get(),get()) }
     viewModel { SuggestBookSeeAllViewModel() }
-    viewModel { SplashViewModel(get()) }
-    viewModel { ChooseFavoriteThemeViewMode() }
-    viewModel { SelectionBooksViewModel(get()) }
 }
 
 val dispatcherModule = module {

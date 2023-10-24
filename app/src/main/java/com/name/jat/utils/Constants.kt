@@ -11,8 +11,5 @@ class Constants {
         const val PROGRESS_INCREMENT_COUNT = 1
         const val TEXT_TYPE_ROBOTO = "Roboto"
         const val TEXT_TYPE_PT_SERIF = "PT Serif"
-        const val MAX_LINES = 4
-        const val OPENED_PART_OF_DIALOG: Float = 0.9F
-
     }
 }

@@ -10,10 +10,18 @@ import kotlinx.coroutines.launch
 
 class SearchDefaultPageViewModel : BaseViewModel() {
 
-    private val _bookInfoList = MutableStateFlow<List<BookInfoAdapterModel>?>(null)
+    private val _bookInfoList: MutableStateFlow<List<BookInfoAdapterModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val bookInfoList = _bookInfoList.asStateFlow()
 
-    private val _popularTagsList = MutableStateFlow<List<PopularTagsDataModel>?>(null)
+    private val _popularTagsList: MutableStateFlow<List<PopularTagsDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val popularTagsList = _popularTagsList.asStateFlow()
 
     fun getSuggestedBooksList() {

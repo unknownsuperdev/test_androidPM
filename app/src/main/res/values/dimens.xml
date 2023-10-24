@@ -45,7 +45,6 @@
     <dimen name="space_298">298dp</dimen>
     <dimen name="space_164">164dp</dimen>
     <dimen name="space_74">74dp</dimen>
-    <dimen name="space_76">76dp</dimen>
     <dimen name="space_94">92dp</dimen>
     <dimen name="space_96">96dp</dimen>
     <dimen name="space_184">184dp</dimen>
@@ -59,20 +58,15 @@
     <dimen name="space_356">356dp</dimen>
     <dimen name="space_256">256dp</dimen>
     <dimen name="space_288">288dp</dimen>
-    <dimen name="space_88">88dp</dimen>
     <dimen name="space_296">296dp</dimen>
     <dimen name="space_316">316dp</dimen>
     <dimen name="space_92">92dp</dimen>
     <dimen name="space_106">106dp</dimen>
-    <dimen name="space_200">200dp</dimen>
-    <dimen name="space_240">240dp</dimen>
-    <dimen name="space_220">220dp</dimen>
-    <dimen name="space_86">86dp</dimen>
-    <dimen name="space_144">144dp</dimen>
     <dimen name="space_152">152dp</dimen>
     <dimen name="space_154">154dp</dimen>
     <dimen name="space_15">15dp</dimen>
     <dimen name="space_176">176dp</dimen>
+    <dimen name="space_88">88dp</dimen>
     <dimen name="space_5">5dp</dimen>
     <!--sizes-->
     <dimen name="size_0">0sp</dimen>
@@ -92,7 +86,6 @@
     <dimen name="size_20">20sp</dimen>
     <dimen name="size_24">24sp</dimen>
     <dimen name="size_26">26sp</dimen>
-    <dimen name="size_32">32sp</dimen>
     <dimen name="size_48">48sp</dimen>
     <dimen name="size_60">60sp</dimen>
 

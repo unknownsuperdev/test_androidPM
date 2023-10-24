@@ -74,6 +74,5 @@ dependencies {
     implementation(libraries.glide)
     implementation(libraries.swiperecycler)
     implementation (libraries.flexbox)
-    implementation (libraries.viewPager)
     implementation (libraries.imageCropper)
 }

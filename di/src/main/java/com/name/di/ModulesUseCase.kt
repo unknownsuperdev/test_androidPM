@@ -17,8 +17,6 @@ val useCaseModule = module {
     factory<BookSettingsGetUseCase> { BookSettingsGetUseCaseImpl(get(), get()) }
     factory<BookSettingsInsertUseCase> { BookSettingsInsertUseCaseImpl(get()) }
     factory<TextFontsUseCase> { TextFontsUseCaseImpl() }
-    factory<SetIsOpenedWelcomeScreenUseCase> { SetIsOpenedWelcomeScreenUseCaseImpl(get()) }
-    factory<GetIsOpenedWelcomeScreenUseCase> { GetIsOpenedWelcomeScreenUseCaseImpl(get()) }
     factory<GetUserTokenFromDatastoreUseCase> { GetUserTokenFromDatastoreUseCaseImpl(get()) }
     factory<GetProfileInfoUseCase> { GetProfileInfoUseCaseImpl(get(), get()) }
     factory<RemoveProfileAvatarUseCase> { RemoveProfileAvatarUseCaseImpl(get(), get()) }

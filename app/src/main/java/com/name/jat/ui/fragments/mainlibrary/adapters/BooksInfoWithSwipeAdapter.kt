@@ -13,9 +13,6 @@ import com.name.jat.appbase.adapter.BaseViewHolder
 import com.name.jat.utils.setResizableText
 import com.name.jat.databinding.ItemBooksWithSwipeBinding
 import com.name.jat.extensions.dpToPx
-import com.name.jat.utils.Constants
-import com.name.jat.utils.Constants.Companion.MAX_LINES
-
 
 class BooksInfoWithSwipeAdapter(
     private val onItemSavedStateChanged: (id: Long, isSaved: Boolean) -> Unit,
@@ -58,7 +55,7 @@ class BooksInfoWithSwipeAdapter(
                 val decryptionText = item.bookInfo
                 bookItem.description.setResizableText(
                     decryptionText,
-                    MAX_LINES,
+                    4,
                     true,
                     collapseText = false,
                     action = {

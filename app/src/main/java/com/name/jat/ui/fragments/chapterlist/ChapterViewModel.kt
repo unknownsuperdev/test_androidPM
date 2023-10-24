@@ -9,7 +9,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class ChapterViewModel : BaseViewModel() {
-    private val _chaptersList = MutableStateFlow<ChaptersModel?>(null)
+    private val _chaptersList: MutableStateFlow<ChaptersModel?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val chaptersList = _chaptersList.asStateFlow()
 
     fun getChapterListData() {

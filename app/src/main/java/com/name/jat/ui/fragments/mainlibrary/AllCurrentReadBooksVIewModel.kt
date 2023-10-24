@@ -9,8 +9,11 @@ import kotlinx.coroutines.launch
 
 class AllCurrentReadBooksVIewModel : BaseViewModel() {
 
-    private val _allCurrentReadsBookList =
-        MutableStateFlow<List<AllCurrentReadBooksDataModel>?>(null)
+    private val _allCurrentReadsBookList: MutableStateFlow<List<AllCurrentReadBooksDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val allCurrentReadsBookList = _allCurrentReadsBookList.asStateFlow()
 
     fun getAllCurrentReadsBooksList() {

@@ -9,7 +9,11 @@ import kotlinx.coroutines.launch
 
 class AllGenresViewModel : BaseViewModel() {
 
-    private val _genreDataList = MutableStateFlow<List<GenreDataModel>?>(null)
+    private val _genreDataList: MutableStateFlow<List<GenreDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val genreDataList = _genreDataList.asStateFlow()
 
     fun getGenreDataList() {

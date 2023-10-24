@@ -36,19 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.exploreFragment -> viewBinding.bottomNav.visibility = View.VISIBLE
                 R.id.bookSummaryFragment -> viewBinding.bottomNav.visibility = View.VISIBLE
                 R.id.reportFragment -> viewBinding.bottomNav.visibility = View.GONE
                 R.id.readerFragment -> viewBinding.bottomNav.visibility = View.GONE
                 R.id.editProfileFragment -> viewBinding.bottomNav.visibility = View.GONE
                 R.id.profileFragment -> viewBinding.bottomNav.visibility = View.VISIBLE
-                R.id.splashFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.welcomeFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.selectGenderFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.pickReadingTimeFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.chooseFavoriteThemeFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.analyzeNovelFragment -> viewBinding.bottomNav.visibility = View.GONE
-                R.id.selectionBooksFragment -> viewBinding.bottomNav.visibility = View.GONE
             }
         }
 

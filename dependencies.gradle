@@ -36,7 +36,6 @@ ext {
             "archCoreTesting"         : '2.1.0',
             "koinTest"                : '3.1.4',
             "flexbox"                 : '3.0.0',
-            "viewPager"               : '1.0.0',
             "imageCropper"            : '2.0.0',
     ]
 
@@ -67,7 +66,6 @@ ext {
             "swiperecycler"     : "com.github.aitsuki:SwipeMenuRecyclerView:$versions.swiperecycler",
             "flexbox"           : "com.google.android.flexbox:flexbox:$versions.flexbox",
             "imageCropper"      : "com.github.CanHub:Android-Image-Cropper:$versions.imageCropper",
-            "viewPager"         : "androidx.viewpager2:viewpager2:$versions.viewPager",
     ]
 
     androidTest = [

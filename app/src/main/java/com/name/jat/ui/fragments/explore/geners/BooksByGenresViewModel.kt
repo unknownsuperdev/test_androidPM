@@ -9,8 +9,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class BooksByGenresViewModel : BaseViewModel() {
-
-    private val _bookInfoList = MutableStateFlow<BookInfoAdapterModelList?>(null)
+    private val _bookInfoList: MutableStateFlow<BookInfoAdapterModelList?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val bookInfoList = _bookInfoList.asStateFlow()
 
     fun getSuggestedBooksList() {

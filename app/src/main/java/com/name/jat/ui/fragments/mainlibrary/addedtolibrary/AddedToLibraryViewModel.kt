@@ -15,10 +15,18 @@ class AddedToLibraryViewModel(
     private val getBooksLibraryUseCase: GetBooksLibraryUseCase
 ) : BaseViewModel() {
 
-    private val _suggestedBooksList = MutableStateFlow<SuggestedBooksModel?>(null)
+    private val _suggestedBooksList: MutableStateFlow<SuggestedBooksModel?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val suggestedBooksList = _suggestedBooksList.asStateFlow()
 
-    private val _addedToLibraryBooks = MutableStateFlow<List<BooksWithReadProgressBookData>?>(null)
+    private val _addedToLibraryBooks: MutableStateFlow<List<BooksWithReadProgressBookData>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val addedToLibraryBooks = _addedToLibraryBooks.asStateFlow()
 
     fun getAddedToLibraryBooksList() {

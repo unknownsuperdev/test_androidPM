@@ -1,7 +1,7 @@
 package com.name.jat.ui.fragments.booksummmary
 
 import android.content.Intent
-import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
@@ -9,12 +9,9 @@ import com.name.jat.R
 import com.name.jat.appbase.FragmentBaseNCMVVM
 import com.name.jat.appbase.utils.viewBinding
 import com.name.jat.databinding.FragmentBookSummaryBinding
-import com.name.jat.extensions.shareBookWithIntent
 import com.name.jat.extensions.startHeaderTextAnimation
 import com.name.jat.ui.fragments.chapterlist.ChapterListBottomDialog
-import com.name.jat.ui.fragments.reader.OpenedFromWhere
-import com.name.jat.ui.fragments.reader.ReaderFragment.Companion.ARGUMENT_FOR_OPENING_CHAPTER_DIALOG
-import com.name.jat.utils.Constants.Companion.MAX_LINES
+import com.name.jat.ui.reader.OpenedFromWhere
 import com.name.jat.utils.setResizableText
 import kotlinx.coroutines.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -27,8 +24,7 @@ class BookSummaryFragment : FragmentBaseNCMVVM<BookSummaryViewModel, FragmentBoo
 
         with(binding) {
             val decryptionText = description.text
-            description.setResizableText(decryptionText.toString(),
-                MAX_LINES, true, collapseText = true)
+            description.setResizableText(decryptionText.toString(), 4, true, collapseText = true)
             views.text = resources.getString(R.string.views, 30)
             likes.text = resources.getString(R.string.likes, 24)
             context?.let {
@@ -148,7 +144,7 @@ class BookSummaryFragment : FragmentBaseNCMVVM<BookSummaryViewModel, FragmentBoo
                 viewModel.changeBookLikeState()
             }
             share.setOnClickListener {
-                activity?.shareBookWithIntent("This is my book link to share.")
+                shareBook()
             }
             addToLibrary.setOnClickListener {
                 viewModel.addOrRemoveBook()
@@ -158,11 +154,7 @@ class BookSummaryFragment : FragmentBaseNCMVVM<BookSummaryViewModel, FragmentBoo
                 navigateFragment(directions)
             }
             chapters.setOnClickListener {
-                val btnDialog = ChapterListBottomDialog()
-                val args = Bundle().apply {
-                    putSerializable(ARGUMENT_FOR_OPENING_CHAPTER_DIALOG, OpenedFromWhere.FROM_BOOK_SUMMERY)
-                }
-                btnDialog.arguments = args
+                val btnDialog = ChapterListBottomDialog(OpenedFromWhere.FROM_BOOK_SUMMERY)
                 btnDialog.show(childFragmentManager, ChapterListBottomDialog::class.java.simpleName)
             }
             suggestedBooksRV.onSuggestedBooksItemClick = { suggestedBookId, isAddedLibrary ->
@@ -184,5 +176,15 @@ class BookSummaryFragment : FragmentBaseNCMVVM<BookSummaryViewModel, FragmentBoo
                 viewModel.startReadBook()
             }
         }
+    }
+
+    private fun shareBook() {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "This is my book link to share.")
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 }

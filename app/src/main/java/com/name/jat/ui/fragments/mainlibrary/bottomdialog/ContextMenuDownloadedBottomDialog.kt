@@ -1,5 +1,6 @@
 package com.name.jat.ui.fragments.mainlibrary.bottomdialog
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,6 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.name.jat.R
 import com.name.jat.databinding.BottomDialogContextMenuDownloadedBinding
-import com.name.jat.extensions.shareBookWithIntent
 
 class ContextMenuDownloadedBottomDialog : BottomSheetDialogFragment() {
 
@@ -38,9 +38,10 @@ class ContextMenuDownloadedBottomDialog : BottomSheetDialogFragment() {
     }
 
     private fun onClick() {
+
         with(binding) {
             share.setOnClickListener {
-                activity?.shareBookWithIntent("This is my book link to share.")
+                shareBook()
                 dismiss()
             }
             finished.setOnClickListener {
@@ -77,6 +78,16 @@ class ContextMenuDownloadedBottomDialog : BottomSheetDialogFragment() {
             bundleOf(BOOK_ID to args.id, TYPE to args.type)
         )
         dismiss()
+    }
+
+    private fun shareBook() {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "This is my book link to share.")
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
     companion object {

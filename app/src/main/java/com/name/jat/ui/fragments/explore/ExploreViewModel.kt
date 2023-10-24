@@ -28,16 +28,28 @@ class ExploreViewModel(
         getExploreDataList()
     }
 
-    private val _exploreDataList = MutableStateFlow<List<BaseExploreDataModel>?>(null)
+    private val _exploreDataList: MutableStateFlow<List<BaseExploreDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val exploreDataList = _exploreDataList.asStateFlow()
 
-    private val _guestToken = MutableStateFlow<GuestToken?>(null)
+    private val _guestToken: MutableStateFlow<GuestToken?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val guestToken = _guestToken.asStateFlow()
 
-    private val _printMessageAddedLib = MutableSharedFlow<Unit?>()
+    private val _printMessageAddedLib: MutableSharedFlow<Unit?> by lazy {
+        MutableSharedFlow()
+    }
     val printMessageAddedLib = _printMessageAddedLib.asSharedFlow()
 
-    private val _printMessageRemoveLib = MutableSharedFlow<Unit?>()
+    private val _printMessageRemoveLib: MutableSharedFlow<Unit?> by lazy {
+        MutableSharedFlow()
+    }
     val printMessageRemoveLib = _printMessageRemoveLib.asSharedFlow()
 
     fun getGuestToken(uuId: String) {
@@ -78,8 +90,8 @@ class ExploreViewModel(
 
         if (!updatedList.isNullOrEmpty()) {
             viewModelScope.launch {
-                if (isAddedLibrary) {
-                    when (addBookToLibraryUseCase(bookItemId)) {
+                if (!isAddedLibrary) {
+                    when (removeBookFromLibraryUseCase(bookItemId)) {
                         is ActionResult.Success -> {
                             updateExploreDataList(
                                 dataModelId,
@@ -95,7 +107,7 @@ class ExploreViewModel(
                         }
                     }
                 } else {
-                    when (removeBookFromLibraryUseCase(bookItemId)) {
+                    when (addBookToLibraryUseCase(bookItemId)) {
                         is ActionResult.Success -> {
                             updateExploreDataList(
                                 dataModelId,
@@ -125,8 +137,8 @@ class ExploreViewModel(
         val updatedList = exploreDataList.value?.toMutableList()
         if (!updatedList.isNullOrEmpty()) {
             viewModelScope.launch {
-                if (isAddedLibrary) {
-                    when (addBookToLibraryUseCase(storyItemId)) {
+                if (!isAddedLibrary) {
+                    when (removeBookFromLibraryUseCase(storyItemId)) {
                         is ActionResult.Success -> {
                             updateStoryInExploreDataList(
                                 dataModelId,
@@ -142,7 +154,7 @@ class ExploreViewModel(
                         }
                     }
                 } else {
-                    when (removeBookFromLibraryUseCase(storyItemId)) {
+                    when (addBookToLibraryUseCase(storyItemId)) {
                         is ActionResult.Success -> {
                             updateStoryInExploreDataList(
                                 dataModelId,

@@ -1,6 +1,5 @@
 package com.name.domain.model
 
-import android.os.Parcelable
 import com.name.domain.extentions.toData
 import com.name.domain.extentions.toEntity
 import com.name.domain.model.enums.ColorThemeData
@@ -8,9 +7,8 @@ import com.name.domain.model.enums.FlipTypeData
 import com.name.domain.model.enums.LineHeightData
 import com.name.domain.model.enums.TextTypeData
 import com.name.entities.roommodels.BookSettingsEntity
-import kotlinx.parcelize.Parcelize
+import com.name.entities.roommodels.enums.TextTypeEntity
 
-@Parcelize
 data class BookSettingsData(
     val id: String,
     val brightness: Int,
@@ -19,7 +17,7 @@ data class BookSettingsData(
     val textSize: Int,
     val lineHeight: LineHeightData,
     val flipType: FlipTypeData,
-) : Parcelable {
+) {
     companion object {
 
         fun from(data: BookSettingsEntity): BookSettingsData =

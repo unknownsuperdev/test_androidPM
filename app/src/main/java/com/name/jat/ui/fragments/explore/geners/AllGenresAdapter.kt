@@ -7,6 +7,7 @@ import androidx.navigation.NavDirections
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.name.domain.model.GenreDataModel
 import com.name.jat.appbase.adapter.BaseAdapter
 import com.name.jat.appbase.adapter.BaseViewHolder
@@ -38,8 +39,12 @@ class AllGenresAdapter(
         override fun bind(item: GenreDataModel, context: Context) {
             with(binding) {
                 title.text = item.title
-                if (item.icon.isNotEmpty()) {
-                    val url = GlideUrl(item.icon)
+                if(item.icon.isNotEmpty()) {
+                    val url = GlideUrl(
+                        item.icon, LazyHeaders.Builder()
+                            .addHeader("User-Agent", "your-user-agent")
+                            .build()
+                    )
                     Glide.with(context)
                         .load(url)
                         .into(genreIcon)

@@ -9,7 +9,11 @@ import kotlinx.coroutines.launch
 
 class SeeAllFinishedBooksViewModel : BaseViewModel() {
 
-    private val _allFinishedBookList = MutableStateFlow<List<AllCurrentReadBooksDataModel>?>(null)
+    private val _allFinishedBookList: MutableStateFlow<List<AllCurrentReadBooksDataModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val allFinishedBookList = _allFinishedBookList.asStateFlow()
 
     fun getAllFinishedBookList() {

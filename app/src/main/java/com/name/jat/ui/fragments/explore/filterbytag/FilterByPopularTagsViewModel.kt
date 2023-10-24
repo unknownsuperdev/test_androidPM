@@ -10,13 +10,18 @@ import kotlinx.coroutines.launch
 
 class FilterByPopularTagsViewModel : BaseViewModel() {
 
-    private val _popularTagsList = MutableStateFlow<List<PopularTagsModel>?>(null)
+    private val _popularTagsList: MutableStateFlow<List<PopularTagsModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val popularTagsList = _popularTagsList.asStateFlow()
-
     private val selectedTagsIdList = mutableListOf<PopularTagsDataModel>()
 
     fun getPopularTagsList() {
+
         val tagsList = mutableListOf<PopularTagsModel>()
+
         val popularTagsModel = PopularTagsModel(
             "9991", "Identity", listOf(
                 PopularTagsDataModel(171, "Boss"),

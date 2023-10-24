@@ -11,10 +11,17 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class BrowsingHistoryViewModel : BaseViewModel() {
-    private val _historyBookInfoList = MutableStateFlow<List<BookInfoAdapterModel>?>(null)
+    private val _historyBookInfoList: MutableStateFlow<List<BookInfoAdapterModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val historyBookInfoList = _historyBookInfoList.asStateFlow()
 
-    private val _afterDeleteCurrentReadBook = MutableSharedFlow<Unit?>()
+    private val _afterDeleteCurrentReadBook: MutableSharedFlow<Unit?> by lazy {
+        MutableSharedFlow()
+    }
+
     val afterDeleteCurrentReadBook = _afterDeleteCurrentReadBook.asSharedFlow()
 
     var message = ""

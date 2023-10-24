@@ -10,9 +10,4 @@ interface DataStoreService {
     suspend fun setGuestToken(token: String)
     fun getGuestToken(): Flow<String?>
 
-    suspend fun setIsWelcomeScreenOpened(isOpened: Boolean)
-    fun getIsWelcomeScreenOpened(): Flow<Boolean?>
-
-    /*suspend fun setUserToken(token: String)
-    fun getUserToken(): Flow<String> */
 }

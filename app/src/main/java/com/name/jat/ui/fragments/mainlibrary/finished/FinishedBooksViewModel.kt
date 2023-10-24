@@ -10,7 +10,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class FinishedBooksViewModel : BaseViewModel() {
-    private val _finishedReadBooks = MutableStateFlow<List<BooksWithReadProgressBookData>?>(null)
+    private val _finishedReadBooks: MutableStateFlow<List<BooksWithReadProgressBookData>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val finishedReadBooks = _finishedReadBooks.asStateFlow()
 
     private val _suggestedBooksList: MutableStateFlow<SuggestedBooksModel?> by lazy {

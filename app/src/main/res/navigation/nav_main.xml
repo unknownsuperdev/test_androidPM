@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/exploreFragment">
 
     <fragment
         android:id="@+id/exploreFragment"
@@ -194,15 +194,15 @@
         android:label="AddedToLibraryFragment" />
     <fragment
         android:id="@+id/readerFragment"
-        android:name="com.name.jat.ui.fragments.reader.ReaderFragment"
+        android:name="com.name.jat.ui.reader.ReaderFragment"
         android:label="ReaderFragment" />
     <fragment
         android:id="@+id/reportFragment"
-        android:name="com.name.jat.ui.fragments.reader.ReportFragment"
+        android:name="com.name.jat.ui.reader.ReportFragment"
         android:label="ReportFragment" />
     <fragment
         android:id="@+id/otherReportFragment"
-        android:name="com.name.jat.ui.fragments.reader.OtherReportFragment"
+        android:name="com.name.jat.ui.reader.OtherReportFragment"
         android:label="OtherReportFragment" />
     <fragment
         android:id="@+id/profileFragment"
@@ -274,67 +274,5 @@
         <action
             android:id="@+id/action_suggestBookSeeAllFragment_to_bookSummaryFragment"
             app:destination="@id/bookSummaryFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.SplashFragment"
-        android:label="SplashFragment" >
-        <action
-            android:id="@+id/action_splashFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_exploreFragment"
-            app:destination="@id/exploreFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.WelcomeFragment"
-        android:label="WelcomeFragment" >
-        <action
-            android:id="@+id/action_welcomeFragment_to_selectGenderFragment"
-            app:destination="@id/selectGenderFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectGenderFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.SelectGenderFragment"
-        android:label="SelectGenderFragment" >
-        <action
-            android:id="@+id/action_selectGenderFragment_to_pickReadingTimeFragment"
-            app:destination="@id/pickReadingTimeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/pickReadingTimeFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.PickReadingTimeFragment"
-        android:label="PickReadingTimeFragment" >
-        <action
-            android:id="@+id/action_pickReadingTimeFragment_to_chooseFavoriteThemeFragment"
-            app:destination="@id/chooseFavoriteThemeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/chooseFavoriteThemeFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.ChooseFavoriteThemeFragment"
-        android:label="ChooseFavoriteThemeFragment" >
-        <action
-            android:id="@+id/action_chooseFavoriteThemeFragment_to_analyzeNovelFragment"
-            app:destination="@id/analyzeNovelFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/analyzeNovelFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.AnalyzeNovelFragment"
-        android:label="AnalyzeNovelFragment" >
-        <action
-            android:id="@+id/action_analyzeNovelFragment_to_selectionBooksFragment"
-            app:destination="@id/selectionBooksFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectionBooksFragment"
-        android:name="com.name.jat.ui.fragments.onboarding.SelectionBooksFragment"
-        android:label="SelectionBooksFragment" >
-        <action
-            android:id="@+id/action_selectionBooksFragment_to_exploreFragment"
-            app:destination="@id/exploreFragment" />
-        <action
-            android:id="@+id/action_selectionBooksFragment_to_readerFragment"
-            app:destination="@id/readerFragment" />
     </fragment>
 </navigation>

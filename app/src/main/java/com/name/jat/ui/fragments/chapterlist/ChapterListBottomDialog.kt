@@ -15,15 +15,14 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.name.jat.R
 import com.name.jat.databinding.BottomDialogChaptersListBinding
-import com.name.jat.ui.fragments.reader.OpenedFromWhere
-import com.name.jat.ui.fragments.reader.ReaderFragment.Companion.ARGUMENT_FOR_OPENING_CHAPTER_DIALOG
-
-import com.name.jat.utils.Constants.Companion.OPENED_PART_OF_DIALOG
+import com.name.jat.ui.reader.OpenedFromWhere
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
-class ChapterListBottomDialog : BottomSheetDialogFragment() {
+class ChapterListBottomDialog(
+    private val openedFromWhere: OpenedFromWhere
+) : BottomSheetDialogFragment() {
 
     private lateinit var binding: BottomDialogChaptersListBinding
     private val viewModel: ChapterViewModel by viewModels()
@@ -46,7 +45,8 @@ class ChapterListBottomDialog : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            when (arguments?.get(ARGUMENT_FOR_OPENING_CHAPTER_DIALOG) as OpenedFromWhere) {
+
+            when (openedFromWhere) {
                 OpenedFromWhere.FROM_BOOK_SUMMERY -> {
                     closeBtn.visibility = View.GONE
                     chaptersTitle.gravity = Gravity.CENTER
@@ -83,7 +83,7 @@ class ChapterListBottomDialog : BottomSheetDialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         dialog.setOnShowListener {
-            val maxHeight = (resources.displayMetrics.heightPixels * OPENED_PART_OF_DIALOG).toInt()
+            val maxHeight = (resources.displayMetrics.heightPixels * 0.9).toInt()
             (dialog as? BottomSheetDialog)?.behavior?.addBottomSheetCallback(object :
                 BottomSheetBehavior.BottomSheetCallback() {
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}

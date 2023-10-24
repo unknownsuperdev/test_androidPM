@@ -164,32 +164,4 @@
     <string name="remove_photo">Remove Photo</string>
     <string name="choose_photo">Choose Photo</string>
     <string name="are_you_shure_you_want_to_sign_out">Are you shure you want to Sign Out?</string>
-    <string name="faction_me">Fiction.\nMe.</string>
-    <string name="hi_welcome">Hi, Welcome to FictionMe!</string>
-    <string name="welcome_description">Complete a short questionnaire so that we can collect the most interesting novels for you</string>
-    <string name="find_novels">Find the hottest novels you\'ve ever read</string>
-    <string name="start">Start</string>
-    <string name="will_take_no_more_than_1_minute">It will take no more than 1 minute</string>
-    <string name="select_your_gender">Select Your Gender</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="continue_">Continue</string>
-    <string name="pick_time">Pick a Time When You Like to Read</string>
-    <string name="morning">Morning</string>
-    <string name="afternoon">Afternoon</string>
-    <string name="evening">Evening</string>
-    <string name="any_spare_time">Any spare time</string>
-    <string name="choose_your_favorite_themes">Choose Your Favorite Themes</string>
-    <string name="picking_right_stories">Picking the Right Stories for You</string>
-    <string name="romance">Romance</string>
-    <string name="novels_analyzed">%d%% of novels analyzed...</string>
-    <string name="werewolf">Werewolf</string>
-    <string name="fantasy">Fantasy</string>
-    <string name="done">Done</string>
-    <string name="novels_for_you">Novels for You</string>
-    <string name="chapter_1">\t Konoha had been there for ten years. This was the second year since the second Hokage, Senju Tobirama, had been appointed as the Hokage.
-Two years ago, Uchiha Madara, who had disappeared for a long time, had returned, and then he had a fierce battle with Hashirama in Valley of The End. In the end, it was Hashirama who had won, defeated Uchiha Madara, and even sealed Kyuubi.
-However, Hashirama was also seriously injured and had a terminal illness. Not long after he returned, he reluctantly handed over the position of the Hokage to Tobirama, and he accompanied his wife and family into the countdown period of their lives.
-No matter how powerful the healing ability was, it could not fight against the disease, just like Super Saiyan would die of heart disease, which was funny.</string>
-    <string name="continue_reading">Continue Reading</string>
 </resources>

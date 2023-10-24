@@ -8,7 +8,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class BrowsingHistorySearchViewModel : BaseViewModel() {
-    private val _searchResult = MutableStateFlow<List<BookInfoAdapterModel>?>(null)
+    private val _searchResult: MutableStateFlow<List<BookInfoAdapterModel>?> by lazy {
+        MutableStateFlow(
+            null
+        )
+    }
     val searchResult = _searchResult.asStateFlow()
 
     fun getSearchResult(word: String) {
