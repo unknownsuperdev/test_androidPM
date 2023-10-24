@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.explore.ExploreFragment">
+
+    <com.fiction.me.customviews.AppbarCustom
+        android:id="@+id/customAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customSnackBar"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_48"
+        android:background="@drawable/bg_save_library"
+        android:drawableStart="@drawable/ic_done"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/space_16"
+        android:padding="@dimen/space_12"
+        android:text="@string/_was_downloaded"
+        android:translationZ="@dimen/space_4"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/explore_list_RV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/space_16"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/space_16"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/shimmerEffect"
+        android:paddingTop="@dimen/space_8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/earnedCoinDialog"
+        android:paddingTop="@dimen/space_8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

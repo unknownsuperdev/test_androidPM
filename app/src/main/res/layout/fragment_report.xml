@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Headings_h2_Medium"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginBottom="@dimen/space_16"
+        android:gravity="center_vertical"
+        android:text="@string/select_a_reason"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reportFieldsRV"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:listitem="@layout/item_report_field" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sendReportBtn"
+        style="@style/BodyMedium_black600_14_Btn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:layout_marginBottom="@dimen/space_24"
+        android:background="@drawable/bg_enable_and_disable_btn"
+        android:enabled="false"
+        android:text="@string/send_a_report"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title" />
+
+    <ProgressBar
+        android:id="@+id/progressCircular"
+        style="@style/CustomProgressStyle"
+        android:layout_width="@dimen/space_24"
+        android:layout_height="@dimen/space_24"
+        android:layout_centerInParent="true"
+        android:elevation="@dimen/space_4"
+        android:indeterminateDuration="1000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/sendReportBtn"
+        app:layout_constraintEnd_toEndOf="@id/sendReportBtn"
+        app:layout_constraintStart_toStartOf="@id/sendReportBtn"
+        app:layout_constraintTop_toTopOf="@id/sendReportBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

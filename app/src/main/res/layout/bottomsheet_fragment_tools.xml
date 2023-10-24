@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/closeBtn"
+        android:layout_width="@dimen/space_24"
+        android:layout_height="@dimen/space_24"
+        android:layout_marginTop="@dimen/space_12"
+        android:layout_marginEnd="@dimen/space_16"
+        android:background="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_316"
+        android:layout_gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_16"
+            android:paddingBottom="@dimen/space_48">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/brightnessText"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_24"
+                android:text="@string/brightness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/brightnessStroke"
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_marginTop="@dimen/space_12"
+                android:layout_marginEnd="@dimen/space_12"
+                android:background="@drawable/ic_sun_brightness_stroke"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/brightnessText"
+                app:layout_goneMarginTop="@dimen/space_8" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/brightnessFilled"
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@drawable/ic_sun_brightness_filled"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/brightnessStroke" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/brightnessSeekBar"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_8"
+                android:maxHeight="@dimen/space_4"
+                android:progressDrawable="@drawable/seekbar_progress_style"
+                android:thumb="@drawable/thumb_shape"
+                app:layout_constraintBottom_toBottomOf="@id/brightnessFilled"
+                app:layout_constraintEnd_toStartOf="@id/brightnessFilled"
+                app:layout_constraintStart_toEndOf="@id/brightnessStroke"
+                app:layout_constraintTop_toTopOf="@id/brightnessFilled" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/colorThemeText"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_28"
+                android:text="@string/color_theme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/brightnessSeekBar" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/white_theme"
+                style="@style/BodyMedium_Black_Btn"
+                android:layout_width="@dimen/space_72"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginTop="@dimen/space_12"
+                android:background="@drawable/bg_selector_white_and_stroke_black"
+                android:text="@string/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/colorThemeText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/black_theme"
+                style="@style/BodyMedium_PWhite_Btn_15"
+                android:layout_width="@dimen/space_72"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginStart="@dimen/space_16"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:text="@string/black"
+                app:layout_constraintStart_toEndOf="@id/white_theme"
+                app:layout_constraintTop_toTopOf="@id/white_theme" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sepia_theme"
+                style="@style/BodyMedium_Black_Btn"
+                android:layout_width="@dimen/space_72"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginStart="@dimen/space_16"
+                android:background="@drawable/bg_selector_sepia_and_stroke_black"
+                android:text="@string/sepia"
+                app:layout_constraintStart_toEndOf="@id/black_theme"
+                app:layout_constraintTop_toTopOf="@id/black_theme" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textType"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_28"
+                android:text="@string/text_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/white_theme" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/textFontRV"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textType" />
+            <!--tools:listitem="@layout/item_text_font"-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sizeText"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_28"
+                android:text="@string/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFontRV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textSizeContainer"
+                android:layout_width="@dimen/space_110"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginTop="@dimen/space_12"
+                android:background="@drawable/bg_black100_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sizeText">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_0"
+                    android:paddingHorizontal="@dimen/space_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textSize"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_minus" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSize"
+                    style="@style/Caption_12_Medium_PWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_0"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/space_4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/plus"
+                    app:layout_constraintStart_toEndOf="@id/minus"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_0"
+                    android:paddingHorizontal="@dimen/space_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/textSize"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_plus" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/line_height_text"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_28"
+                android:text="@string/line_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textSizeContainer" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/defaultLineHeight"
+                style="@style/BodyMedium_Black_Btn"
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginTop="@dimen/space_12"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:paddingHorizontal="@dimen/space_16"
+                android:paddingVertical="@dimen/space_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_height_text"
+                app:srcCompat="@drawable/ic_line_space_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/biggerLineHeight"
+                style="@style/BodyMedium_Black_Btn"
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginStart="@dimen/space_16"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:paddingHorizontal="@dimen/space_16"
+                android:paddingVertical="@dimen/space_12"
+                app:layout_constraintStart_toEndOf="@id/defaultLineHeight"
+                app:layout_constraintTop_toTopOf="@id/defaultLineHeight"
+                app:srcCompat="@drawable/ic_line_space_2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/flipType"
+                style="@style/Caption_18_Medium_PWhite"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_28"
+                android:text="@string/flip_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/defaultLineHeight" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/flipTurnPage"
+                style="@style/BodyMedium_PWhite_Btn_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_12"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:gravity="center"
+                android:text="Page"
+                android:paddingHorizontal="@dimen/space_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flipType" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/flipShift"
+                style="@style/BodyMedium_PWhite_Btn_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:gravity="center"
+                android:text="Horizontal"
+                android:paddingHorizontal="@dimen/space_12"
+                app:layout_constraintStart_toEndOf="@id/flipTurnPage"
+                app:layout_constraintTop_toTopOf="@id/flipTurnPage" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/flipScroll"
+                style="@style/BodyMedium_PWhite_Btn_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:background="@drawable/bg_selector_black100_and_white_stroke"
+                android:gravity="center"
+                android:text="Vertical"
+                android:paddingHorizontal="@dimen/space_12"
+                app:layout_constraintStart_toEndOf="@id/flipShift"
+                app:layout_constraintTop_toTopOf="@id/flipShift" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

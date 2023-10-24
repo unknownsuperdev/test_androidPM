@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="example_email">example@email.com</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="email">Email</string>
+    <string name="forgot_password_description">Please enter your account email for which you want to reset your password.</string>
+    <string name="recovery_email">Recovery email</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="recovery_code">Recovery Code</string>
+    <string name="recovery_email_description_start">Please enter code we’ve just emailed at</string>
+    <string name="recovery_email_description_end">. If you can’t find the mail, please check your Spam or Junk mail folder.</string>
+    <string name="change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="repeat_your_password">Repeat your password</string>
+    <string name="close">Close</string>
+    <string name="new_code_to_email">We have new code to your email </string>
+    <string name="invalid_pass">The password must have at least 6 letters, 1 lowercase, 1 uppercase and 1 number</string>
+    <string name="identical_pass">The passwords should be identical</string>
+    <string name="field_required">This field is required</string>
+    <string name="enter_correct_email">Please enter the correct mail format</string>
+    <string name="verify_email_address">Verify Email Address</string>
+    <string name="verify_email_description_start">Please verify your email address</string>
+    <string name="verify_email_description_end">to protect your purchase history and recover your password. You’ll get free coins after you verify your email.</string>
+    <string name="check_your_spam">Check your spam,</string>
+    <string name="resend_email"> resend email </string>
+    <string name="or"> or </string>
+    <string name="change_your_email"> change your email</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="continue_">Continue</string>
+    <string name="already_have_an_account">Already have an Account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="dont_have_an_account">Don\'t have an Account Yet?</string>
+    <string name="password_changed">Your password has been changed</string>
+</resources>

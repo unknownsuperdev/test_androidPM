@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/space_100"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@+id/toolBar"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_48"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@drawable/black_dark_shape_4px"
+        app:layout_constraintEnd_toStartOf="@id/btnCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_goneMarginEnd="@dimen/space_16">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edSearch"
+            style="@style/Medium_16"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginStart="@dimen/space_14"
+            android:layout_marginEnd="@dimen/space_16"
+            android:background="@color/black_300"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/space_14"
+            android:ellipsize="end"
+            android:hint="@string/downloaded_search_hint"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/icClear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_14"
+            android:background="@drawable/ic_clear"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:fontFamily="@font/roboto_medium_500"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingVertical="@dimen/size_10"
+        android:text="@string/cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_14"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/searchContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchContainer"
+        tools:textColor="@color/black"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/noResultLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/noResult"
+            style="@style/Headings_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_48"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/no_results" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tryNewSearch"
+            style="@style/Light_14"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_48"
+            android:gravity="center"
+            android:text="@string/try_a_new_search" />
+    </LinearLayout>
+
+    <com.fiction.me.customviews.BooksWithReadProgressPagingView
+        android:id="@+id/currentReadBooks"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginTop="@dimen/space_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

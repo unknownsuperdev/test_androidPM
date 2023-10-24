@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_black400_r8">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTxt"
+        style="@style/Body_Regular_19_White500"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_24"
+        android:layout_marginTop="@dimen/space_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Well Done" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/descriptionTxt"
+        style="@style/Body_Regular_14_Lavender_Grey"
+        android:layout_width="@dimen/space_264"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_24"
+        android:layout_marginVertical="@dimen/space_16"
+        android:gravity="start"
+        android:text="@string/well_done_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/positiveBtn"
+        style="@style/Title_SemiBold_15_secondary_purple600"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_24"
+        android:layout_margin="@dimen/space_34"
+        android:gravity="center"
+        android:minWidth="@dimen/space_42"
+        android:text="@string/ok"
+        android:textColor="@color/secondary_purple_dark_600"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTxt" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/negativeBtn"
+        style="@style/Title_SemiBold_15_secondary_purple400"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_24"
+        android:layout_marginEnd="@dimen/space_20"
+        android:gravity="center"
+        android:minWidth="@dimen/space_42"
+        android:text="@string/no"
+        android:textColor="@color/secondary_purple_dark_600"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/positiveBtn"
+        app:layout_constraintEnd_toStartOf="@id/positiveBtn"
+        app:layout_constraintTop_toTopOf="@id/positiveBtn"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

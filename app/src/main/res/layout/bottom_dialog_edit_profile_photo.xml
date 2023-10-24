@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cameraTakePhoto"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:paddingHorizontal="@dimen/space_16"
+        android:drawableEnd="@drawable/ic_camera"
+        android:text="@string/take_photo"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/galleryChoosePhoto"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:paddingHorizontal="@dimen/space_16"
+        android:drawableEnd="@drawable/ic_gallery"
+        android:text="@string/choose_photo"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cameraTakePhoto"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/removePhoto"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:paddingHorizontal="@dimen/space_16"
+        android:drawableEnd="@drawable/ic_delete"
+        android:text="@string/remove_photo"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/galleryChoosePhoto"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

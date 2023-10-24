@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Headings_h3_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_results"
+        android:textAlignment="center" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Body_Regular_16_Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="@string/select_other_tags"
+        android:textAlignment="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backToTags"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_24"
+        android:background="@drawable/bg_back_to_tags_btn"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingVertical="@dimen/space_14"
+        android:text="@string/back_to_tags"
+        android:textAllCaps="true" />
+</LinearLayout>

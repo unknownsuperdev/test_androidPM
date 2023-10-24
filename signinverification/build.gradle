@@ -1,0 +1,82 @@
+plugins {
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file("../FictionMe.jks")
+            storePassword "\\s3C>Qn0(Y-=/\$%E3#Ih"
+            keyAlias "FictionMeKey"
+            keyPassword "\\s3C>Qn0(Y-=/\$%E3#Ih"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "named"
+    productFlavors {
+        dev {
+            dimension = "named"
+        }
+        devprod {
+            dimension = "named"
+        }
+        prod {
+            dimension = "named"
+        }
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.kotlinCompilerExtensionVersion
+    }
+    buildFeatures {
+        compose true
+    }
+}
+
+
+dependencies {
+    implementation project(path: ':baseui')
+    implementation project(path: ':domain')
+    implementation project(path: ':core')
+    implementation project(path: ':di')
+
+    implementation(libraries.gsonConverter)
+    implementation(androidXLibraries.roomRuntime)
+    implementation(composeLibraries.composeUi)
+    implementation(composeLibraries.composeUiToolingPreview)
+    implementation(composeLibraries.composeMaterial)
+    implementation(composeLibraries.composeActivity)
+    implementation(composeLibraries.composeFoundation)
+    implementation(composeLibraries.androidxLifecycle)
+    implementation(composeLibraries.composeConstraint)
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+    implementation(androidXLibraries.navigationFragmentKtx)
+    implementation(androidXLibraries.navigationUiKtx)
+    implementation(libraries.koinAndroid)
+    implementation(androidXLibraries.constraintLayout)
+
+    // compose
+    implementation(composeLibraries.composeUi)
+    implementation(composeLibraries.composeUiToolingPreview)
+    implementation(composeLibraries.composeMaterial)
+    implementation(composeLibraries.composeActivity)
+    implementation(composeLibraries.composeFoundation)
+    implementation(composeLibraries.androidxLifecycle)
+    implementation(composeLibraries.composeConstraint)
+    implementation(composeLibraries.matherial3)
+
+    testImplementation(test.junit)
+    testImplementation(test.coroutinesTest)
+    testImplementation(test.koinTest)
+    testImplementation(androidTest.archCoreTesting)
+    androidTestImplementation(androidTest.androidxJunit)
+    androidTestImplementation(androidTest.androidxEspressoCore)
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/recentSearch"
+        style="@style/Headings_h2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_48"
+        android:gravity="center"
+        android:text="@string/recently_searched"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clear"
+        style="@style/BodyBold"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_48"
+        android:layout_marginEnd="@dimen/space_16"
+        android:gravity="center"
+        android:text="@string/clear"
+        android:textAllCaps="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/searchRv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recentSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recentSearch"
+        tools:listitem="@layout/item_search_with_name" />
+
+    <FrameLayout
+        android:id="@+id/progressContainer"
+        android:layout_width="@dimen/space_88"
+        android:layout_height="@dimen/space_88"
+        android:background="@drawable/bg_progress_container"
+        android:elevation="@dimen/space_2"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/space_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/mainProgressBar"
+            android:layout_width="@dimen/space_32"
+            android:layout_height="@dimen/space_32"
+            android:layout_gravity="center"
+            android:elevation="@dimen/space_4"
+            android:indeterminateDrawable="@drawable/main_progress_rotate_item"
+            android:indeterminateDuration="500" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/no_result_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/no_result"
+            style="@style/Headings_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_48"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/no_results" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/try_new_search"
+            style="@style/Light_14"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_48"
+            android:gravity="center"
+            android:text="@string/try_a_new_search" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

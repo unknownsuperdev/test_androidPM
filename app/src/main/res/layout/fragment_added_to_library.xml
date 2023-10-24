@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fiction.me.customviews.AppbarCustom
+        android:id="@+id/customAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customSnackBar"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_48"
+        android:background="@drawable/bg_save_library"
+        android:drawableStart="@drawable/ic_done"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/space_16"
+        android:padding="@dimen/space_12"
+        android:text="@string/_was_downloaded"
+        android:translationZ="@dimen/space_4"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/emptyStateLayout"
+                layout="@layout/item_all_library_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/space_32"
+                android:visibility="gone" />
+
+            <com.fiction.me.customviews.BooksWithReadProgressView
+                android:id="@+id/addedToLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/space_256"
+                android:layout_marginTop="@dimen/space_16"
+                />
+
+            <com.fiction.me.customviews.SuggestedBooksView
+                android:id="@+id/suggestedBooksView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:paddingBottom="@dimen/space_56" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

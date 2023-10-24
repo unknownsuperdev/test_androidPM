@@ -1,0 +1,15 @@
+package com.fiction.domain.model.enums
+
+enum class FeedTypes {
+    FOR_YOU,
+    POPULAR,
+    HOT_ROMANCE,
+    TOP_WEEKLY_BESTSELLERS,
+    HOT_WEREWOLF,
+    NEW_ARRIVAL,
+    SALE,
+    YOU_MAY_ALSO_LIKE_FROM_BOOK_SUMMARY,
+    YOU_MAY_ALSO_LIKE_FROM_LIBRARY,
+    YOU_MAY_ALSO_LIKE_FROM_FINISHED,
+    MOST_POPULAR
+}

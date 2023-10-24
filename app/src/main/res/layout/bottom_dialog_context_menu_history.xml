@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookCover"
+        android:layout_width="@dimen/space_48"
+        android:layout_height="@dimen/space_64"
+        android:layout_marginStart="@dimen/space_24"
+        android:layout_marginTop="@dimen/space_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_40"
+        android:text="Day and night"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bookCover"
+        app:layout_constraintTop_toTopOf="@id/bookCover" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/genre"
+        style="@style/Caption_14_Light_Dark_White_Roboto_300"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:text="Fantasy, Romance"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_1"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@color/black_400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookCover" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addToLibrary"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_add_to_library"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_12"
+        android:text="@string/add_to_library"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/delete"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_delete"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_12"
+        android:text="@string/delete_from_lib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addToLibrary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

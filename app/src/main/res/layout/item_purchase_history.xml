@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_black200_radius8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookCover"
+        android:layout_width="@dimen/space_36"
+        android:layout_height="@dimen/space_48"
+        android:layout_margin="@dimen/space_8"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_17"
+        app:layout_constraintStart_toEndOf="@id/bookCover"
+        app:layout_constraintTop_toTopOf="@id/bookCover"
+        app:layout_constraintEnd_toStartOf="@id/lastPurchase"
+        android:text="Hungry wolves"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lastPurchase"
+        style="@style/Caption_14_Medium_Black600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_purchase"
+        android:paddingStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bookCover"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/unlockChapterCount"
+        style="@style/Caption_13_Medium_Gray700"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_2"
+        app:layout_constraintStart_toEndOf="@id/bookCover"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        android:text="32 unlocked chapters"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        style="@style/Caption_13_Medium_Gray700"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space_16"
+        app:layout_constraintEnd_toEndOf="@id/lastPurchase"
+        app:layout_constraintTop_toTopOf="@id/unlockChapterCount"
+        android:text="Apr 12, 2022"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@id/exploreFragment">
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.fiction.me.ui.fragments.explore.ExploreFragment"
+        android:label="fragment_followers"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_exploreFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_allGenresFragment"
+            app:destination="@id/allGenresFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_libraryFragment"
+            app:destination="@id/searchMainFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_suggestBookSeeAllFragment"
+            app:destination="@id/suggestBookSeeAllFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_filteredBooksFragment"
+            app:destination="@id/filteredBooksFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_booksByGenresFragment"
+            app:destination="@id/booksByGenresFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_booksByTagFragment"
+            app:destination="@id/booksByTagFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_welcomeGiftFragment"
+            app:destination="@id/welcomeGiftFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookSummaryFragment"
+        android:name="com.fiction.me.ui.fragments.booksummmary.BookSummaryFragment"
+        android:label="BookSummaryFragment">
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_addedToLibraryFragment"
+            app:destination="@id/addedToLibraryFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_booksByTagFragment"
+            app:destination="@id/booksByTagFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_getCoinFromStoreFragment"
+            app:destination="@id/coinShopFragment" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_specialOfferGetCoinFragment"
+            app:destination="@id/specialOfferGetCoinFragment" />
+        <!--<action
+            android:id="@+id/action_bookSummaryFragment_to_youMayAlsoLikeAllBooksFragment"
+            app:destination="@id/youMayAlsoLikeAllBooksFragment" />-->
+        <argument
+            android:name="itemId"
+            app:argType="long" />
+        <argument
+            android:name="isOpeningFromOnBoarding"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="bookInfo"
+            android:defaultValue="@null"
+            app:argType="com.fiction.domain.model.BookInfo"
+            app:nullable="true" />
+        <argument
+            android:name="isFromPush"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="bookInfoJson"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="section"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <deepLink app:uri="myApp://fiction.me/request?itemId={itemId}&amp;bookInfoJson={bookInfoJson}&amp;isOpeningFromOnBoarding={isOpeningFromOnBoarding}&amp;isFromPush={isFromPush}" />
+        <action
+            android:id="@+id/action_bookSummaryFragment_to_youMayAlsoLikeBooksWithPagingFragment"
+            app:destination="@id/youMayAlsoLikeBooksWithPagingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allGenresFragment"
+        android:name="com.fiction.me.ui.fragments.explore.geners.AllGenresFragment"
+        android:label="AllGenresFragment">
+        <action
+            android:id="@+id/action_allGenresFragment_to_booksByGenresFragment"
+            app:destination="@id/booksByGenresFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filterByPopularTagsFragment"
+        android:name="com.fiction.me.ui.fragments.explore.filterbytag.FilterByPopularTagsFragment"
+        android:label="FilterByPopularTagsFragment">
+        <action
+            android:id="@+id/action_filterByPopularTagsFragment_to_filteredBooksFragment"
+            app:destination="@id/filteredBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filteredBooksFragment"
+        android:name="com.fiction.me.ui.fragments.explore.filterbytag.FilteredBooksFragment"
+        android:label="FilteredBooksFragment">
+        <action
+            android:id="@+id/action_filteredBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="tags"
+            app:argType="com.fiction.domain.model.PopularTagsDataModel[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchMainFragment"
+        android:name="com.fiction.me.ui.fragments.search.SearchMainFragment"
+        android:label="searchMainFragment">
+        <action
+            android:id="@+id/action_libraryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
+        <action
+            android:id="@+id/action_searchMainFragment_to_booksByTagFragment"
+            app:destination="@id/booksByTagFragment" />
+        <action
+            android:id="@+id/action_searchMainFragment_to_suggestBookSeeAllFragment"
+            app:destination="@id/suggestBookSeeAllFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/booksByGenresFragment"
+        android:name="com.fiction.me.ui.fragments.explore.geners.BooksByGenresFragment"
+        android:label="BooksByGenresFragment">
+        <action
+            android:id="@+id/action_booksByGenresFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allCurrentReadBooksFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.AllCurrentReadBooksFragment"
+        android:label="AllCurrentReadBooksFragment">
+        <action
+            android:id="@+id/action_allCurrentReadBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="openedAllBooks"
+            app:argType="com.fiction.domain.model.OpenedAllBooks" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/readerFragment"
+        android:name="com.fiction.me.ui.fragments.reader.ReaderFragment"
+        android:label="ReaderFragment">
+        <action
+            android:id="@+id/action_readerFragment_to_getCoinFromStoreFragment"
+            app:destination="@id/coinShopFragment" />
+        <action
+            android:id="@+id/action_readerFragment_to_specialOfferGetCoinFragment"
+            app:destination="@id/specialOfferGetCoinFragment" />
+        <action
+            android:id="@+id/action_readerFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <action
+            android:id="@+id/action_readerFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <argument
+            android:name="bookId"
+            app:argType="long" />
+        <argument
+            android:name="chapterId"
+            app:argType="long" />
+        <argument
+            android:name="isChapterLocked"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="isUpdateCurrentBooks"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="isCompleted"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="isFromOnBoarding"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="colorTheme"
+            android:defaultValue="BLACK"
+            app:argType="com.fiction.domain.model.enums.ColorThemeData" />
+        <argument
+            android:name="referrer"
+            android:defaultValue="book_summary_screen"
+            app:argType="string" />
+        <deepLink app:uri="myApp://fiction.me/request?chapterId={chapterId}&amp;bookId={bookId}&amp;isFromOnBoarding={isFromOnBoarding}&amp;referrer={referrer}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.fiction.me.ui.fragments.reader.ReportFragment"
+        android:label="ReportFragment">
+        <action
+            android:id="@+id/action_reportFragment_to_otherReportFragment"
+            app:destination="@id/otherReportFragment" />
+        <argument
+            android:name="chapterId"
+            app:argType="long" />
+        <argument
+            android:name="bookId"
+            app:argType="long" />
+        <argument
+            android:name="readiedPercent"
+            app:argType="float" />
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otherReportFragment"
+        android:name="com.fiction.me.ui.fragments.reader.OtherReportFragment"
+        android:label="OtherReportFragment">
+        <argument
+            android:name="chapterId"
+            app:argType="long" />
+        <argument
+            android:name="bookId"
+            app:argType="long" />
+        <argument
+            android:name="readiedPercent"
+            app:argType="float" />
+        <argument
+            android:name="bookName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/suggestBookSeeAllFragment"
+        android:name="com.fiction.me.ui.fragments.explore.SuggestBookSeeAllFragment"
+        android:label="SuggestBookSeeAllFragment">
+        <action
+            android:id="@+id/action_suggestBookSeeAllFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="feedType"
+            app:argType="com.fiction.domain.model.enums.FeedTypes" />
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/booksByTagFragment"
+        android:name="com.fiction.me.ui.fragments.explore.filterbytag.BooksByTagFragment"
+        android:label="BooksByTagFragment">
+        <action
+            android:id="@+id/action_booksByTagFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/retentionInReaderBottomDialog"
+        android:name="com.fiction.me.ui.fragments.retention.RetentionInReaderBottomDialog"
+        android:label="RetentionInReaderBottomDialog" />
+
+    <fragment
+        android:id="@+id/specialOfferGetCoinFragment"
+        android:name="com.fiction.me.ui.fragments.purchase.SpecialOfferGetCoinFragment"
+        android:label="SpecialOfferGetCoinFragment" />
+
+    <fragment
+        android:id="@+id/coinShopFragment"
+        android:name="com.fiction.me.ui.fragments.purchase.CoinShopFragment"
+        android:label="GetCoinFromStoreFragment">
+        <action
+            android:id="@+id/action_getCoinFromStoreFragment_to_writeToSupportFragment"
+            app:destination="@id/writeToSupportFragment" />
+        <action
+            android:id="@+id/action_getCoinFromStoreFragment_to_readerFragment"
+            app:destination="@id/readerFragment"
+            app:popUpTo="@+id/coinShopFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="bookId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <argument
+            android:name="chapterId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <argument
+            android:name="isFromProfile"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="bookName"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+
+        <deepLink app:uri="myApp://fiction.me/request?isFromProfile={isFromProfile}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/writeToSupportFragment"
+        android:name="com.fiction.me.ui.fragments.purchase.WriteToSupportFragment"
+        android:label="WriteToSupportFragment" />
+
+    <fragment
+        android:id="@+id/welcomeGiftFragment"
+        android:name="com.fiction.me.ui.fragments.gift.WelcomeGiftFragment"
+        android:label="WelcomeGiftFragment">
+        <argument
+            android:name="giftCoinCount"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="coinCount"
+            app:argType="integer" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/chapterListBottomDialog"
+        android:name="com.fiction.me.ui.fragments.chapterlist.ChapterListBottomDialog"
+        android:label="ChapterListBottomDialog" />
+
+    <fragment
+        android:id="@+id/youMayAlsoLikeBooksWithPagingFragment"
+        android:name="com.fiction.me.ui.fragments.booksummmary.YouMayAlsoLikeBooksWithPagingFragment"
+        android:label="YouMayAlsoLikeBooksWithPagingFragment">
+        <argument
+            android:name="bookId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_youMayAlsoLikeBooksWithPagingFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerAndEarnCoinsFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.earncoincompose.RegisterAndEarnCoinsFragment"
+        android:label="RegisterAndEarnCoinsFragment">
+        <!-- <action
+             android:id="@+id/action_registerAndEarnCoinsFragment_to_signUpFragment"
+             app:destination="@id/signUpFragment" />-->
+    </fragment>
+
+</navigation>

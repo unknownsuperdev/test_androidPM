@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space_32">
+
+    <LinearLayout
+        android:id="@+id/circle_container"
+        android:layout_width="@dimen/space_48"
+        android:layout_height="@dimen/space_48"
+        android:layout_marginHorizontal="@dimen/space_10"
+        android:background="@drawable/selector_genre_container"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/genreIcon"
+            style="@style/NumTextStyle"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Caption_12_Medium_Selector_Gray_White"
+        android:layout_width="@dimen/space_92"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle_container"
+        tools:text="Steamy Stories (18+)" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

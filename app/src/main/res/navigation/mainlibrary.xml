@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainlibrary"
+    app:startDestination="@id/mainLibraryFragment">
+
+    <fragment
+        android:id="@+id/mainLibraryFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.MainLibraryFragment"
+        android:label="MainLibraryFragment">
+        <action
+            android:id="@+id/action_mainLibrary_to_contextMenuBottomDialog"
+            app:destination="@id/contextMenuActionBottomDialog" />
+        <action
+            android:id="@+id/action_mainLibraryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_mainLibraryFragment_to_allCurrentReadBooksFragment"
+            app:destination="@id/allCurrentReadBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/librarySearchFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.LibrarySearchFragment"
+        android:label="LibrarySearchFragment">
+        <action
+            android:id="@+id/action_librarySearchFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finishedFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.finished.FinishedBooksFragment"
+        android:label="FinishedFragment">
+        <action
+            android:id="@+id/action_finishedFragment_to_finishedBooksSearchFragment"
+            app:destination="@id/finishedBooksSearchFragment" />
+        <action
+            android:id="@+id/action_finishedFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_finishedFragment_to_youMayAlsoLikeAllBooksFragment"
+            app:destination="@id/youMayAlsoLikeAllBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seeAllFinishedBooksFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.finished.SeeAllFinishedBooksFragment"
+        android:label="SeeAllFinishedBooksFragment">
+        <action
+            android:id="@+id/action_seeAllFinishedBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/browsingHistoryFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.browsinghistory.BrowsingHistoryFragment"
+        android:label="BrowsingHistoryFragment">
+        <action
+            android:id="@+id/action_browsingHistoryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_browsingHistoryFragment_to_contextMenuHistoryBottomDialog"
+            app:destination="@id/contextMenuHistoryBottomDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/browsingHistorySearchFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.browsinghistory.BrowsingHistorySearchFragment"
+        android:label="BrowsingHistorySearchFragment">
+        <action
+            android:id="@+id/action_browsingHistorySearchFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addedToLibraryFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.addedtolibrary.AddedToLibraryFragment"
+        android:label="AddedToLibraryFragment">
+        <action
+            android:id="@+id/action_addedToLibraryFragment_to_addedToLibraryBooksSearchFragment"
+            app:destination="@id/addedToLibraryBooksSearchFragment" />
+        <action
+            android:id="@+id/action_addedToLibraryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_addedToLibraryFragment_to_allCurrentReadBooksFragment"
+            app:destination="@id/allCurrentReadBooksFragment" />
+        <action
+            android:id="@+id/action_addedToLibraryFragment_to_youMayAlsoLikeAllBooksFragment"
+            app:destination="@id/youMayAlsoLikeAllBooksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finishedBooksSearchFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.finished.FinishedBooksSearchFragment"
+        android:label="FinishedBooksSearchFragment">
+        <action
+            android:id="@+id/action_finishedBooksSearchFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addedToLibraryBooksSearchFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.addedtolibrary.AddedToLibraryBooksSearchFragment"
+        android:label="AddedToLibraryBooksSearchFragment">
+        <action
+            android:id="@+id/action_addedToLibraryBooksSearchFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/youMayAlsoLikeAllBooksFragment"
+        android:name="com.fiction.me.ui.fragments.booksummmary.YouMayAlsoLikeAllBooksFragment"
+        android:label="YouMayAlsoLikeAllBooksFragment">
+        <action
+            android:id="@+id/action_youMayAlsoLikeAllBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="feedType"
+            app:argType="com.fiction.domain.model.enums.FeedTypes" />
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allCurrentReadBooksFragment"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.AllCurrentReadBooksFragment"
+        android:label="AllCurrentReadBooksFragment">
+        <action
+            android:id="@+id/action_allCurrentReadBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <argument
+            android:name="openedAllBooks"
+            app:argType="com.fiction.domain.model.OpenedAllBooks" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/contextMenuActionBottomDialog"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.bottomdialog.ContextMenuActionBottomDialog"
+        android:label="ContextMenuActionBottomDialog">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/contextMenuHistoryBottomDialog"
+        android:name="com.fiction.me.ui.fragments.mainlibrary.bottomdialog.ContextMenuHistoryBottomDialog"
+        android:label="ContextMenuHistoryBottomDialog">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </dialog>
+
+</navigation>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space_16"
+    android:layout_marginBottom="@dimen/space_16">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookCover"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="@dimen/space_164"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookEffect"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_0"
+        android:background="@drawable/ic_book_effect"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        app:layout_constraintEnd_toEndOf="@id/bookCover"
+        app:layout_constraintStart_toStartOf="@id/bookCover"
+        app:layout_constraintTop_toTopOf="@id/bookCover" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bookTitle"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookEffect"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Last Movie" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/description"
+        style="@style/Light_14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="start"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bookCover"
+        app:layout_constraintTop_toBottomOf="@id/bookTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bookViews"
+        style="@style/Caption_12_Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_32"
+        android:layout_marginStart="@dimen/space_16"
+        android:background="@drawable/black_dark_shape_4px"
+        android:drawableStart="@drawable/ic_eye"
+        android:drawablePadding="@dimen/space_8"
+        android:gravity="center"
+        android:padding="@dimen/space_8"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        app:layout_constraintStart_toEndOf="@id/bookEffect" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bookLikes"
+        style="@style/Caption_12_Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_32"
+        android:layout_marginStart="@dimen/space_8"
+        android:background="@drawable/black_dark_shape_4px"
+        android:drawableStart="@drawable/ic_favorite_gray"
+        android:drawablePadding="@dimen/space_8"
+        android:gravity="center"
+        android:padding="@dimen/space_8"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        app:layout_constraintStart_toEndOf="@id/bookViews" />
+
+    <ProgressBar
+        android:id="@+id/readProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_4"
+        android:layout_marginTop="@dimen/space_12"
+        android:progressDrawable="@drawable/read_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookViews" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

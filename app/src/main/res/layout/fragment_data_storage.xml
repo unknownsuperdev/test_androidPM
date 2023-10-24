@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customSnackBar"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:background="@drawable/bg_save_library"
+        android:drawableStart="@drawable/success_checkbox_green"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/space_16"
+        android:padding="@dimen/space_12"
+        android:text="@string/cache_is_cleared"
+        android:translationZ="@dimen/space_4"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Headings_h1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/size_12"
+        android:text="@string/data_storage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currentCache"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_34"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/space_16"
+        android:text="@string/current_cache_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currentCacheSize"
+        style="@style/Caption_14_Medium_500"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:text="1 MB"
+        app:layout_constraintStart_toStartOf="@id/currentCache"
+        app:layout_constraintTop_toBottomOf="@id/currentCache" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clearCache"
+        style="@style/BodyBold_Medium_500_purple600"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_26"
+        android:gravity="center"
+        android:text="@string/clear_cache"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

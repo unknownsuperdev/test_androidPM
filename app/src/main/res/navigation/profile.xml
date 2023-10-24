@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.fiction.me.ui.fragments.profile.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_purchaseHistoryFragment"
+            app:destination="@id/purchaseHistoryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_getCoinFromStoreFragment"
+            app:destination="@id/coinShopFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.fiction.me.ui.fragments.profile.settings.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingsFragment_to_dataStorageFragment"
+            app:destination="@id/dataStorageFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_readingModeFragment"
+            app:destination="@id/readingModeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_autoUnlockFragment"
+            app:destination="@id/autoUnlockFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataStorageFragment"
+        android:name="com.fiction.me.ui.fragments.profile.settings.DataStorageFragment"
+        android:label="DataStorageFragment" />
+
+    <fragment
+        android:id="@+id/autoUnlockFragment"
+        android:name="com.fiction.me.ui.fragments.profile.settings.AutoUnlockFragment"
+        android:label="AutoUnlockFragment" />
+
+    <fragment
+        android:id="@+id/readingModeFragment"
+        android:name="com.fiction.me.ui.fragments.profile.settings.ReadingModeFragment"
+        android:label="ReadingModeFragment" />
+
+    <fragment
+        android:id="@+id/purchaseHistoryFragment"
+        android:name="com.fiction.me.ui.fragments.profile.purchasehistory.PurchaseHistoryFragment"
+        android:label="PurchaseHistoryFragment" />
+
+</navigation>

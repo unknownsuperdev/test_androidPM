@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_100">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginBottom="@dimen/space_100"
+        android:paddingHorizontal="@dimen/space_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                style="@style/Headings_h2_Medium"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="@dimen/space_48"
+                android:gravity="center_vertical"
+                android:text="@string/write_report_reason"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputReportLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32"
+                android:background="@drawable/bg_selector_editing_state"
+                android:paddingHorizontal="@dimen/space_2"
+                android:paddingTop="@dimen/space_2"
+                android:paddingBottom="@dimen/space_16"
+                app:boxStrokeWidth="@dimen/space_0"
+                app:boxStrokeWidthFocused="@dimen/space_0"
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:counterTextColor="@color/black_600"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputReport"
+                    style="@style/Body_Regular_16_PWhite"
+                    android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_black300_field"
+                    android:gravity="top"
+                    android:maxLength="500"
+                    android:minHeight="@dimen/space_136"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendReportBtnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/space_16"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sendReportBtn"
+            style="@style/BodyMedium_black600_14_Btn"
+            android:layout_width="@dimen/space_0"
+            android:layout_height="@dimen/space_56"
+            android:layout_marginBottom="@dimen/space_24"
+            android:background="@drawable/bg_enable_and_disable_btn"
+            android:enabled="false"
+            android:text="@string/send_a_report"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            style="@style/CustomProgressStyle"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:layout_centerInParent="true"
+            android:elevation="@dimen/space_2"
+            android:indeterminateDuration="1000"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/sendReportBtn"
+            app:layout_constraintEnd_toEndOf="@id/sendReportBtn"
+            app:layout_constraintStart_toStartOf="@id/sendReportBtn"
+            app:layout_constraintTop_toTopOf="@id/sendReportBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

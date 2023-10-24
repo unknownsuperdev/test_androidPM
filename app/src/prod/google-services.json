@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1056223886481",
+    "project_id": "fictionmeprod",
+    "storage_bucket": "fictionmeprod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056223886481:android:b99622de39f5b23e721330",
+        "android_client_info": {
+          "package_name": "com.fiction.me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056223886481-kav6su10e0191j004irr78qj8unl6upf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fiction.me",
+            "certificate_hash": "3c3364e2778a2b53a50a7cba0309b34fc27c280f"
+          }
+        },
+        {
+          "client_id": "1056223886481-1ovk7q5u5qvrr2p2itefg4ructdkg9bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7gWZ9bJL14ky0QWjoCSIJNAzwEc4E4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056223886481-1ovk7q5u5qvrr2p2itefg4ructdkg9bc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056223886481-m86lg38g59smf9uofl5iulsf7b2sbcbf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bonimor.ios.fictionme",
+                "app_store_id": "1630170714"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

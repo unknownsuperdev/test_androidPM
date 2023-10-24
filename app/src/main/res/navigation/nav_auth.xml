@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginAndRegistrationFragment">
+
+    <include app:graph="@navigation/nav_authorization"/>
+    <fragment
+        android:id="@+id/loginAndRegistrationFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.LoginAndRegistrationFragment"
+        android:label="LoginAndRegistrationFragment" >
+        <action
+            android:id="@+id/action_loginAndRegistrationFragment_to_signInOrSignUpFragment"
+            app:destination="@id/signInOrSignUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpWithEmailFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.SignUpWithEmailFragment"
+        android:label="SignUpWithEmailFragment" >
+        <action
+            android:id="@+id/action_signUpWithEmailFragment_to_signInOrSignUpFragment"
+            app:destination="@id/signInOrSignUpFragment" />
+        <action
+            android:id="@+id/action_signUpWithEmailFragment_to_verifyEmailAddressFragment"
+            app:destination="@id/verifyEmailAddressFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInOrSignUpFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.SignInOrSignUpFragment"
+        android:label="SignInFragment" >
+        <!-- <action
+             android:id="@+id/action_signInFragment_to_logoutFragment"
+             app:destination="@id/logoutFragment" />-->
+        <action
+            android:id="@+id/action_signInOrSignUpFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_signInOrSignUpFragment_to_signInWithMailFragment"
+            app:destination="@id/signInWithMailFragment" />
+        <action
+            android:id="@+id/action_signInOrSignUpFragment_to_signUpWithEmailFragment"
+            app:destination="@id/signUpWithEmailFragment" />
+
+        <argument
+            android:name="type"
+            app:argType="com.fiction.me.ui.fragments.loginregistration.LoginRegisterTypes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyEmailAddressFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.verification.VerifyEmailAddressFragment"
+        android:label="VerifyEmailAddressFragment">
+        <argument
+            android:name="email"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_verifyEmailAddressFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment"
+            app:popUpToInclusive="true"/>
+
+        <deepLink app:uri="myApp://fiction.me/request?email={email}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInWithMailFragment"
+        android:name="com.fiction.me.ui.fragments.loginregistration.signin.SignInWithMailFragment"
+        android:label="SignInWithMailFragment" >
+
+        <action
+            android:id="@+id/action_signInWithMailFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_signInWithMailFragment_to_signInOrSignUpFragment"
+            app:destination="@id/signInOrSignUpFragment" />
+        <action
+            android:id="@+id/action_signInWithMailFragment_to_nav_authorization"
+            app:popUpTo="@id/signInWithMailFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_authorization" />
+    </fragment>
+
+</navigation>

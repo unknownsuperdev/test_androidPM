@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Headings_h1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/size_12"
+        android:text="@string/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/notifications"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_48"
+        android:layout_marginTop="@dimen/space_16"
+        android:drawableStart="@drawable/ic_notifications"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:text="@string/notifications"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchBtn"
+        android:layout_width="@dimen/space_52"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_16"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/notifications"
+        app:thumbTint="@color/white"
+        app:trackTint="@color/track_selector" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/chaptersAutoUnlock"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_unlock"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/chapters_auto_unlock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notifications" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/readingMode"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_glasses"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/reading_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chaptersAutoUnlock" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dataStorage"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_data_storage_stroke"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/data_storage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/readingMode" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/termsOfUse"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_privacy_policy_document_notes"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/terms_of_use"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dataStorage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/privacyPolicy"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_privacy_policy_key"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/privacy_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/termsOfUse" />
+
+     <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/signOut"
+         style="@style/Body_SemiBold_16"
+         android:layout_width="@dimen/space_0"
+         android:layout_height="@dimen/space_48"
+         android:drawableStart="@drawable/ic_sign_out"
+         android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+         android:drawablePadding="@dimen/space_20"
+         android:gravity="center_vertical"
+         android:paddingHorizontal="@dimen/space_12"
+         android:paddingEnd="@dimen/size_12"
+         android:text="@string/sign_out"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/privacyPolicy" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/version"
+        style="@style/Caption_14_Medium_500"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_14"
+        android:text="@string/version"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signOut" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/progressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/baseDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

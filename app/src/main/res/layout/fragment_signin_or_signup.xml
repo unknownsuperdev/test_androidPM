@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.fiction.me.customviews.ToolbarMain
+        android:id="@+id/toolbar"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleAuth"
+        style="@style/Headings_h1"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_12"
+        android:paddingVertical="@dimen/space_12"
+        android:text="@string/sign_in_screen_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/signInWithAppleBtn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:layout_marginTop="@dimen/space_32"
+        android:background="@drawable/bg_stroke_primary_white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/titleAuth"
+        app:layout_constraintStart_toStartOf="@id/titleAuth"
+        app:layout_constraintTop_toBottomOf="@id/titleAuth">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyMedium_Primary_White_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_apple"
+            android:drawablePadding="@dimen/space_8"
+            android:gravity="center_vertical"
+            android:text="@string/continue_with_apple" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signInWithFacebookBtn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@drawable/bg_stroke_primary_white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/signInWithAppleBtn"
+        app:layout_constraintStart_toStartOf="@id/signInWithAppleBtn"
+        app:layout_constraintTop_toBottomOf="@id/signInWithAppleBtn">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyMedium_Primary_White_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_facebook"
+            android:drawablePadding="@dimen/space_8"
+            android:gravity="center_vertical"
+            android:text="@string/continue_with_facebook" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signInWithGoogleBtn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@drawable/bg_stroke_primary_white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/signInWithFacebookBtn"
+        app:layout_constraintStart_toStartOf="@id/signInWithFacebookBtn"
+        app:layout_constraintTop_toBottomOf="@id/signInWithFacebookBtn">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyMedium_Primary_White_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_gmail"
+            android:drawablePadding="@dimen/space_8"
+            android:gravity="center_vertical"
+            android:text="@string/continue_with_google" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signInWithEmailBtn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@drawable/bg_stroke_primary_white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/signInWithGoogleBtn"
+        app:layout_constraintStart_toStartOf="@id/signInWithGoogleBtn"
+        app:layout_constraintTop_toBottomOf="@id/signInWithGoogleBtn">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BodyMedium_Primary_White_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="@dimen/space_8"
+            android:gravity="center_vertical"
+            android:text="@string/continue_with_email" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/agreeTermsAndPolicy"
+        style="@style/BodyMedium_PWhite_Btn_13"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_24"
+        android:layout_marginBottom="@dimen/space_40"
+        android:gravity="center"
+        android:text="@string/agree_terms"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/progressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

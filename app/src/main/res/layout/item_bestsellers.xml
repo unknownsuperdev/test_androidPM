@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/space_184"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/space_16"
+    android:layout_marginBottom="@dimen/space_16">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/book_cover"
+        android:layout_width="@dimen/space_72"
+        android:layout_height="@dimen/space_96"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/book_effect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_book_effect"
+        app:layout_constraintBottom_toBottomOf="@id/book_cover"
+        app:layout_constraintEnd_toEndOf="@id/book_cover"
+        app:layout_constraintStart_toStartOf="@id/book_cover"
+        app:layout_constraintTop_toTopOf="@id/book_cover" />
+
+<!--    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/position"
+        style="@style/Caption_12_Bold_Black100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_4"
+        android:layout_marginBottom="@dimen/space_4"
+        android:background="@drawable/bg_position_bestsellers_item"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/book_cover"
+        app:layout_constraintEnd_toEndOf="@id/book_cover"
+        tools:text="#1" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/book_title"
+        style="@style/Body_SemiBold_15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_14"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/book_cover"
+        app:layout_constraintTop_toTopOf="@id/book_cover"
+        tools:text="Moon light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/genre_category"
+        style="@style/Caption_14_Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/book_title"
+        tools:text="Moon light" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/space_14">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookCover"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="@dimen/space_164"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookEffect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_book_effect"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        app:layout_constraintEnd_toEndOf="@id/bookCover"
+        app:layout_constraintStart_toStartOf="@id/bookCover"
+        app:layout_constraintTop_toTopOf="@id/bookCover" />
+
+    <View
+        android:id="@+id/blurEffect"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_0"
+        android:alpha="0.5"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/bookCover"
+        app:layout_constraintEnd_toEndOf="@id/bookCover"
+        app:layout_constraintStart_toStartOf="@id/bookCover"
+        app:layout_constraintTop_toTopOf="@id/bookCover" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/genreCategory"
+        style="@style/Caption_14_Medium_Gray700"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_14"
+        app:layout_constraintEnd_toEndOf="@id/bookEffect"
+        app:layout_constraintStart_toStartOf="@id/bookEffect"
+        app:layout_constraintTop_toBottomOf="@id/bookEffect"
+        tools:text="Fantasy, Romance" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/genreCategory"
+        app:layout_constraintStart_toStartOf="@id/genreCategory"
+        app:layout_constraintTop_toBottomOf="@id/genreCategory"
+        tools:text="Moon light" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

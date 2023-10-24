@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/containerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_72"
+        app:layout_constraintBottom_toTopOf="@id/closeBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/progress_container"
+        android:layout_width="@dimen/space_88"
+        android:layout_height="@dimen/space_88"
+        android:background="@drawable/bg_progress_container"
+        android:elevation="@dimen/space_2"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/containerProgress"
+        app:layout_constraintTop_toTopOf="@id/containerProgress">
+
+        <ProgressBar
+            android:id="@+id/mainProgressBar"
+            android:layout_width="@dimen/space_32"
+            android:layout_height="@dimen/space_32"
+            android:layout_gravity="center"
+            android:elevation="@dimen/space_4"
+            android:indeterminateDrawable="@drawable/main_progress_rotate_item"
+            android:indeterminateDuration="500" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        android:background="@color/dark_violet_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/closeBtn" />
+
+    <FrameLayout
+        android:id="@+id/closeBtn"
+        android:layout_width="@dimen/space_48"
+        android:layout_height="@dimen/space_48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerProgress">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_close" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginHorizontal="@dimen/space_48"
+        android:layout_marginBottom="@dimen/space_32"
+        android:background="@drawable/ic_bg_stars"
+        app:layout_constraintBottom_toBottomOf="@id/getCoins"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        android:background="@drawable/shine_light_shadow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/closeBtn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/Body_Regular_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_8"
+        android:gravity="center"
+        android:text="@string/get_more_coins_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+
+
+    <!--    <FrameLayout
+            android:id="@+id/progress_container"
+            android:layout_width="@dimen/space_88"
+            android:layout_height="@dimen/space_88"
+            android:layout_marginTop="@dimen/space_48"
+            android:background="@drawable/bg_progress_container"
+            app:layout_constraintEnd_toEndOf="@id/coins"
+            app:layout_constraintStart_toStartOf="@id/coins"
+            app:layout_constraintTop_toTopOf="@id/coins"
+            android:visibility="gone" >
+
+            <ProgressBar
+                android:id="@+id/mainProgressBar"
+                android:layout_width="@dimen/space_32"
+                android:layout_height="@dimen/space_32"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/main_progress_rotate_item"
+                android:elevation="@dimen/space_4"
+                android:indeterminateDuration="500" />
+        </FrameLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/priceContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_50"
+        android:layout_marginHorizontal="@dimen/space_64"
+        android:layout_marginTop="@dimen/space_48"
+        android:background="@drawable/bg_primary_white_r96"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/coinImg"
+            android:layout_width="@dimen/space_32"
+            android:layout_height="@dimen/space_32"
+            android:layout_marginStart="@dimen/space_8"
+            android:background="@drawable/ic_one_coin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/coins"
+            style="@style/Bold_20_violet100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginEnd="@dimen/space_24"
+            android:text="11000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/price"
+            app:layout_constraintStart_toEndOf="@id/coinImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            style="@style/Headings_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_0"
+            android:layout_marginVertical="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_6"
+            android:background="@drawable/bg_dark_violet100_r96"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/space_16"
+            android:text="$94.99"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getCoins"
+        style="@style/Title_SemiBold_16_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_56"
+        android:layout_marginBottom="@dimen/space_16"
+        android:background="@drawable/main_button"
+        android:text="@string/get_coins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

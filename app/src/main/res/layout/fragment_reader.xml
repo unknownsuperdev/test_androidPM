@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.fiction.me.customviews.ToolbarStandard
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:titleMarginStart="@dimen/space_50" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bookPageText"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginBottom="@dimen/space_56"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingTop="@dimen/space_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.fiction.me.page_curl_lib.page_curling.CurlView
+        android:id="@+id/curlPageView"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginBottom="@dimen/space_56"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingTop="@dimen/space_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pages"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_0"
+        android:layout_marginBottom="@dimen/space_56"
+        android:paddingHorizontal="@dimen/space_16"
+        android:paddingTop="@dimen/space_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customSnackBar"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_26"
+        android:layout_marginTop="@dimen/space_56"
+        android:background="@drawable/bg_save_library"
+        android:drawableStart="@drawable/ic_done"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/space_56"
+        android:padding="@dimen/space_16"
+        android:text="@string/saved_library"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/readPercent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_56"
+        android:background="@color/black_100"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--   <include layout="@layout/item_open_next_chapter"/>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chapterLastPage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black_100"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleBook"
+            style="@style/Headings_h1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_152"
+            android:gravity="center"
+            android:text="@string/open_next_chapter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            style="@style/Body_Regular_18_dark_white_900"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_50"
+            android:layout_marginTop="@dimen/space_24"
+            android:gravity="center"
+            android:text="@string/open_next_chapter_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBook"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/goForNext"
+                style="@style/Title_SemiBold_16_White_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_60"
+                android:layout_marginTop="@dimen/space_40"
+                android:background="@drawable/main_button"
+                android:text="@string/go_for_next"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"/>
+
+            <ProgressBar
+                android:id="@+id/progressCircular"
+                style="@style/CustomProgressStyle"
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/space_26"
+                android:indeterminateDuration="1000"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@id/goForNext"
+                app:layout_constraintBottom_toBottomOf="@id/goForNext"
+                app:layout_constraintEnd_toEndOf="@id/goForNext"
+                app:layout_constraintTop_toTopOf="@id/goForNext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/finishedItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_100"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleFinishedPage"
+            style="@style/Headings_h1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_178"
+            android:gravity="center"
+            android:text="@string/this_is_the_end" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descriptionFinishedPage"
+            style="@style/Body_Regular_18_dark_white_900"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_50"
+            android:layout_marginTop="@dimen/space_24"
+            android:gravity="center"
+            android:text="@string/you_have_completed_book" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/progressContainer"
+        android:layout_width="@dimen/space_88"
+        android:layout_height="@dimen/space_88"
+        android:background="@drawable/bg_progress_container"
+        android:elevation="@dimen/space_10"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/mainProgressBar"
+            android:layout_width="@dimen/space_32"
+            android:layout_height="@dimen/space_32"
+            android:layout_gravity="center"
+            android:elevation="@dimen/space_10"
+            android:indeterminateDrawable="@drawable/main_progress_rotate_item"
+            android:indeterminateDuration="500" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_56"
+        android:background="@color/dark_black_200"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/chapterBtn"
+            android:layout_width="@dimen/space_0"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/modeBtn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_chapter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/modeBtn"
+            android:layout_width="@dimen/space_0"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/toolsBtn"
+            app:layout_constraintStart_toEndOf="@id/chapterBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/modeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_light_mode" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolsBtn"
+            android:layout_width="@dimen/space_0"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/modeBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_tools" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/autoUnlockDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/progressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
