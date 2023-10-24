@@ -10,10 +10,9 @@
         android:id="@+id/circle_container"
         android:layout_width="@dimen/space_48"
         android:layout_height="@dimen/space_48"
-        android:layout_marginHorizontal="@dimen/space_10"
+        android:layout_marginStart="@dimen/space_20"
         android:background="@drawable/selector_genre_container"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,19 +21,18 @@
             style="@style/NumTextStyle"
             android:layout_width="@dimen/space_24"
             android:layout_height="@dimen/space_24"
-            android:gravity="center" />
+            android:gravity="center"
+            android:src="@drawable/genre_icon" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        style="@style/Caption_12_Medium_Selector_Gray_White"
-        android:layout_width="@dimen/space_92"
+        style="@style/Caption_L_Medium_Selector_Gray_White"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_8"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/circle_container"
+        app:layout_constraintStart_toStartOf="@id/circle_container"
         app:layout_constraintTop_toBottomOf="@id/circle_container"
-        tools:text="Steamy Stories (18+)" />
-
+        tools:text="New Adults" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@
         android:layout_width="@dimen/space_36"
         android:layout_height="@dimen/space_48"
         android:layout_margin="@dimen/space_8"
+        android:src="@drawable/book_2"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

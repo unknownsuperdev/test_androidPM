@@ -1,7 +1,5 @@
 plugins {
     id 'kotlin-parcelize'
-    id 'kotlin-kapt'
-
 }
 
 dependencies {
@@ -15,7 +13,4 @@ dependencies {
     implementation(libraries.koinAndroid)
     implementation(libraries.coroutines)
     implementation(libraries.gsonConverter)
-    implementation(androidXLibraries.paging)
-    implementation(androidXLibraries.roomRuntime)
-    kapt (androidXLibraries.roomCompiler)
 }

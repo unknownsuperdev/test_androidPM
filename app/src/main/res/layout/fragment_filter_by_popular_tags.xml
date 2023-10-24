@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.fiction.me.customviews.ToolbarMain
+    <com.name.jat.customviews.ToolbarMain
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,14 +37,13 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/apply"
-            style="@style/Title_SemiBold_18_Btn"
+            style="@style/Title_SemiBold_Btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_16"
             android:layout_marginTop="@dimen/space_16"
-            android:background="@drawable/main_button"
-            android:text="@string/apply"
-            android:visibility="gone" />
+            android:background="@drawable/button_shape"
+            android:text="@string/apply" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

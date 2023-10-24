@@ -4,17 +4,21 @@ plugins {
 
 android {
 
+    defaultConfig {
+        buildConfigField 'String', 'VERSION_NAME', "\"${application.versionName}\""
+    }
+
     flavorDimensions "named"
     productFlavors{
         dev{
             dimension ="named"
             buildConfigField "String", "API_KEY", '"TEST_KEY"'
-            buildConfigField "String", "BASE_URL", '"https://experience.staging.k8s-dev.tripster.ru/api/"'
+            buildConfigField "String", "BASE_URL", '"https://api-dev.fictionme.net/"'
         }
         prod{
             dimension ="named"
             buildConfigField "String", "API_KEY", '"TEST_KEY"'
-            buildConfigField "String", "BASE_URL", '"https://experience.tripster.ru/api/"'
+            buildConfigField "String", "BASE_URL", '"https://api-dev.fictionme.net/"'
         }
     }
 }
@@ -30,10 +34,9 @@ dependencies {
     implementation(androidXLibraries.datastorePreferences)
     implementation(androidXLibraries.roomRuntime)
     kapt (androidXLibraries.roomCompiler)
+    implementation (androidXLibraries.roomKtx)
     implementation(libraries.koinAndroid)
     implementation(libraries.retrofit)
     implementation(libraries.loggingInterceptor)
     implementation(libraries.gsonConverter)
-    implementation(androidXLibraries.paging)
-
 }

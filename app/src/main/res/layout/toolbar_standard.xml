@@ -3,20 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/white">
+    android:layout_height="?attr/actionBarSize">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_12"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        android:layout_width="@dimen/space_0"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/space_0"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:maxLines="1"
+        style="@style/Caption_18_Medium_PWhite"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlCompat" />
 
@@ -32,14 +41,12 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/secondItem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/space_0"
         android:layout_marginTop="@dimen/space_4"
-        android:layout_marginEnd="@dimen/space_24"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/firstItem"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/firstItem"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/iconBadge"
@@ -47,9 +54,9 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/space_2"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/size_10"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/secondItem"
         app:layout_constraintTop_toTopOf="@+id/secondItem" />
 

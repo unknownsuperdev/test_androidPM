@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
-        style="@style/Headings_h3_20"
+        style="@style/Headings_h3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/no_results"
@@ -18,18 +18,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_4"
         android:text="@string/select_other_tags"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backToTags"
         style="@style/Body_SemiBold_16"
+        android:textAllCaps="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/space_24"
+        android:text="@string/back_to_tags"
         android:background="@drawable/bg_back_to_tags_btn"
+        android:layout_marginTop="@dimen/space_24"
         android:paddingHorizontal="@dimen/space_16"
         android:paddingVertical="@dimen/space_14"
-        android:text="@string/back_to_tags"
-        android:textAllCaps="true" />
+        />
 </LinearLayout>

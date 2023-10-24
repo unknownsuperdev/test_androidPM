@@ -4,34 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.fiction.me.customviews.AppbarCustom
+    <com.name.jat.customviews.AppbarCustom
         android:id="@+id/customAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <LinearLayout
-        android:id="@+id/loadingContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
 
-        <ProgressBar
-            android:id="@+id/loadingProgress"
-            style="@style/CustomLoadingStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminateDuration="500" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            style="@style/Caption_14_Medium_White_Roboto_500"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_8"
-            android:text="@string/loading" />
-    </LinearLayout>
-
-    <com.fiction.me.customviews.AllBooksWithReadProgressView
+    <com.name.jat.customviews.AllBooksWithReadProgressView
         android:id="@+id/allCurrentReadBooksView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

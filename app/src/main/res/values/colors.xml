@@ -2,10 +2,7 @@
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
-    <color name="purple_600">#4B1BB4</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="secondary_purple">#A65EFA</color>
-    <color name="secondary_violet">#2C035B</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#000000</color>
@@ -14,49 +11,39 @@
     <color name="dark_grey">#696969</color>
     <color name="fGrey">#F1F1F1</color>
     <color name="border_grey">#C4C4C4</color>
-    <color name="transparent">#00000000</color>
-    <color name="dark_black">#191818</color>
+
     <color name="black_100">#060606</color>
     <color name="primary_white">#F9F9F9</color>
-    <color name="white_transparent_30">#4DFFFFFF</color>
-    <color name="white_transparent_60">#99FFFFFF</color>
-
-    <color name="gray">#8A95A1</color>
+    <color name="secondary_purple">#A65EFA</color>
+    <color name="gray">#BCBCBC</color>
     <color name="vermilion">#FF4D00</color>
+    <color name="secondary_violet">#2C035B</color>
     <color name="dark_violet">#17022F</color>
-
+    <color name="purple_600">#4B1BB4</color>
     <color name="saffron">#F8C630</color>
     <color name="gray_700">#8B8B8B</color>
     <color name="dark_black_200">#101010</color>
     <color name="dark_black_500">#484848</color>
-    <color name="read_more">#696969</color>
+    <color name="black_600">#696969</color>
     <color name="black_300">#191818</color>
+    <color name="black_400">#272727</color>
+    <color name="black_500">#484848</color>
     <color name="black_800">#8B8B8B</color>
     <color name="black_700">#8B8B8B</color>
     <color name="heliotrope">#A75EFA</color>
-    <color name="gray_100">#8A95A1</color>
-    <color name="gray_95">#F5F7F6</color>
-
-    <color name="gray_90">#EFEFEF</color>
-    <color name="gray_90_0">#00EFEFEF</color>
-    <color name="gray_80">#D5D8DB</color>
-    <color name="gray_70">#BBBCBF</color>
-    <color name="gray_30">#49454F</color>
-    <color name="gray_20">#2B3A49</color>
-    <color name="gray_15">#1A000000</color>
-    <color name="gray_10">#1C1B1F</color>
-    <color name="gradient_gray_start">#CC2B3A49</color>
-    <color name="gradient_gray_end">#662B3A49</color>
-    <color name="teal_500">#00BE8B</color>
-    <color name="green_90">#D8EDE7</color>
-    <color name="blue_500">#2E78C1</color>
-    <color name="tomat">#F14555</color>
-    <color name="tomat_80">#FFE6EA</color>
-    <color name="orange">#F19C38</color>
-    <color name="orange_80">#FFF2D0</color>
-    <color name="light_blue">#E6F2FE</color>
-    <color name="dark_blue">#40BAD2EB</color>
-    <color name="label_color_black">#211E1E</color>
-    <color name="ten_percent_of_black">#1A000000</color>
-    <color name="white_30">#4DFFFFFF</color>
+    <color name="dark_white_900">#DDDDDD</color>
+    <color name="green_400">#118850</color>
+    <color name="green_500">#18C072</color>
+    <color name="light_purple_500">#6308F7</color>
+    <color name="red_500">#EB4444</color>
+    <color name="light_blue">#03DCDC</color>
+    <color name="secondary_purple_dark_600">#C38EFF</color>
+    <color name="dark_white_800">#BCBCBC</color>
+    <color name="purple_400">#6A39B5</color>
+    <color name="orange_500">#F4A42B</color>
+    <color name="sepia_900">#FFF0DA</color>
+    <color name="secondary_purple_500">#A75EFA</color>
+    <color name="secondary_violet_200">#3F1978</color>
+    <color name="dark_violet_100">#1A0638</color>
+    <color name="eerie_black">#1F1F1F</color>
 </resources>

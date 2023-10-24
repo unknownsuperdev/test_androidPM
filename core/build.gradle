@@ -1,3 +1,14 @@
+//android {
+//    flavorDimensions "named"
+//    productFlavors{
+//        dev{
+//            dimension ="named"
+//        }
+//        prod{
+//            dimension ="named"
+//        }
+//    }
+//}
 
 dependencies {
 
@@ -7,5 +18,4 @@ dependencies {
     implementation(androidXLibraries.coreKtx)
     implementation(libraries.koinAndroid)
     implementation(libraries.coroutines)
-    implementation(androidXLibraries.paging)
 }

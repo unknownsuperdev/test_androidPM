@@ -1,35 +1,32 @@
 ext {
 
     versions = [
-            "kotlin"                  : "1.6.21",
-            "material"                : "1.6.1",
+            "gradleBuildTools"        : "7.0.4",
+            "kotlin"                  : "1.6.10",
+            "material"                : "1.4.0",
 
+            "okHttp3"                 : "4.9.0",
+//            "coilVersion"             : "1.3.2",
             "glideVersion"            : "4.12.0",
 
-            "androidxCoreKtx"         : "1.8.0",
+            "androidxCoreKtx"         : "1.7.0",
             "androidxAppcompat"       : "1.4.0",
-            "androidxConstraintLayout": '2.1.4',
+            "androidxConstraintLayout": '2.1.0',
             "androidxlifecycle"       : "2.3.0",
+            "lifecycleCommon"         : "2.3.1",
             "androidxFragment"        : "1.2.2",
-            "androidxNavigation"      : "2.5.0",
-            "androidxRecyclerView"    : "1.2.1",
+            "androidxNavigation"      : "2.3.5",
+            "androidxRecyclerView"    : "1.2.0",
             "koin"                    : "3.1.5",
             "retrofitVersion"         : '2.9.0',
             "gsonVersion"             : '2.9.0',
-            "loggingVersion"          : '4.10.0',
-            "roomVersion"             : '2.4.3',
-            "navVersion"              : '2.5.3',
+            "loggingVersion"          : '5.0.0-alpha.2',
+            "roomVersion"             : '2.3.0',
+            "navVersion"              : '2.3.5',
             "legacySupportVersion"    : '1.0.0',
-            "coroutinesVersion"       : '1.6.3',
+            "coroutinesVersion"       : '1.5.1',
             "storeVersion"            : '1.0.0',
-            "pagingVersion"           : '3.1.1',
-            "shimmer"                 : '0.5.0',
-            "googleMap"               : '18.1.0',
-            "firebaseBom"             : '31.1.0',
-            "googleServices"          : '4.3.15',
-            "firebaseCrashlytics"     : '2.9.4',
-            "squareup"                : '4.2.2',
-            "mindbox"                 : '2.7.0',
+            "swiperecycler"           : '2.1.5',
 
             // test
             "junitVersion"            : '4.13.2',
@@ -37,43 +34,40 @@ ext {
             "espressoCoreVersion"     : '3.4.0',
             "coroutinesTestVersion"   : '1.5.1',
             "archCoreTesting"         : '2.1.0',
-            "koinTest"                : '3.1.4'
+            "koinTest"                : '3.1.4',
+            "flexbox"                 : '3.0.0',
+            "viewPager"               : '1.0.0',
+            "imageCropper"            : '2.0.0',
     ]
 
     application = [
-            "id"         : "ru.tripster.guide",
-            "minApi"     : 24,
-            "maxApi"     : 33,
-            "targetSdk"  : 33,
-            "versionCode": 13,
-            "versionName": "1.0.2",
+            "id"          : "com.name.jat",
+            "minApi"      : 21,
+            "maxApi"      : 31,
+            "targetSdk"   : 31,
+            "buildVersion": "31.0.1",
+            "versionCode" : 1,
+            "versionName" : "1.0.0",
     ]
 
     classpaths = [
-            "safeArgs"           : "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navVersion",
-            "googleServices"     : "com.google.gms:google-services:$versions.googleServices",
-            "firebaseCrashlytics": "com.google.firebase:firebase-crashlytics-gradle:$versions.firebaseCrashlytics"
+            "gradleBuildTools"  : "com.android.tools.build:gradle:$versions.gradleBuildTools",
+            "kotlinGradlePlugin": "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+            "safeArgs"          : "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navVersion"
     ]
 
     libraries = [
-            "material"            : "com.google.android.material:material:$versions.material",
-            "glide"               : "com.github.bumptech.glide:glide:$versions.glideVersion",
-            "koinAndroid"         : "io.insert-koin:koin-android:$versions.koin",
-            "retrofit"            : "com.squareup.retrofit2:retrofit:$versions.retrofitVersion",
-            "gsonConverter"       : "com.squareup.retrofit2:converter-gson:$versions.gsonVersion",
-            "loggingInterceptor"  : "com.squareup.okhttp3:logging-interceptor:$versions.loggingVersion",
-            "coroutines"          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion",
-            "shimmer"             : "com.facebook.shimmer:shimmer:$versions.shimmer",
-//            "googleMap"           : "com.google.android.gms:play-services-maps:$versions.googleMap",
-            "firebaseCrashlytics" : "com.google.firebase:firebase-crashlytics-ktx",
-            "firebaseAnalyticsKtx": "com.google.firebase:firebase-analytics-ktx",
-            "firebaseAnalytics"   : "com.google.firebase:firebase-analytics",
-            "firebaseMessaging"   : "com.google.firebase:firebase-messaging-ktx",
-            "firebaseBom"         : "com.google.firebase:firebase-bom:$versions.firebaseBom",
-            "amplitude"           : "com.amplitude:android-sdk:2.+",
-            "squareup"            : "com.squareup.okhttp3:okhttp:$versions.squareup",
-            "mindbox"             : "cloud.mindbox:mobile-sdk:$versions.mindbox",
-            "mindboxFirebase"     : "cloud.mindbox:mindbox-firebase:$versions.mindbox"
+            "material"          : "com.google.android.material:material:$versions.material",
+            "glide"             : "com.github.bumptech.glide:glide:$versions.glideVersion",
+            "koinAndroid"       : "io.insert-koin:koin-android:$versions.koin",
+            "retrofit"          : "com.squareup.retrofit2:retrofit:$versions.retrofitVersion",
+            "gsonConverter"     : "com.squareup.retrofit2:converter-gson:$versions.gsonVersion",
+            "loggingInterceptor": "com.squareup.okhttp3:logging-interceptor:$versions.loggingVersion",
+            "coroutines"        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion",
+            "swiperecycler"     : "com.github.aitsuki:SwipeMenuRecyclerView:$versions.swiperecycler",
+            "flexbox"           : "com.google.android.flexbox:flexbox:$versions.flexbox",
+            "imageCropper"      : "com.github.CanHub:Android-Image-Cropper:$versions.imageCropper",
+            "viewPager"         : "androidx.viewpager2:viewpager2:$versions.viewPager",
     ]
 
     androidTest = [
@@ -94,13 +88,14 @@ ext {
             "appCompat"            : "androidx.appcompat:appcompat:$versions.androidxAppcompat",
             "legacySupport"        : "androidx.legacy:legacy-support-v4:$versions.legacySupportVersion",
             "constraintLayout"     : "androidx.constraintlayout:constraintlayout:$versions.androidxConstraintLayout",
+            "lifecycleCommon"      : "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycleCommon",
             "fragmentKtx"          : "androidx.fragment:fragment-ktx:$versions.androidxFragment",
             "navigationFragmentKtx": "androidx.navigation:navigation-fragment-ktx:$versions.androidxNavigation",
             "navigationUiKtx"      : "androidx.navigation:navigation-ui-ktx:$versions.androidxNavigation",
             "recyclerView"         : "androidx.recyclerview:recyclerview:$versions.androidxRecyclerView",
-            "roomRuntime"          : "androidx.room:room-ktx:$versions.roomVersion",
+            "roomRuntime"          : "androidx.room:room-runtime:$versions.roomVersion",
             "roomCompiler"         : "androidx.room:room-compiler:$versions.roomVersion",
-            "datastorePreferences" : "androidx.datastore:datastore-preferences:$versions.storeVersion",
-            "paging"               : "androidx.paging:paging-runtime-ktx:$versions.pagingVersion",
+            "roomKtx"              : "androidx.room:room-ktx:$versions.roomVersion",
+            "datastorePreferences" : "androidx.datastore:datastore-preferences:$versions.storeVersion"
     ]
 }

@@ -244,39 +244,36 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/flipTurnPage"
                 style="@style/BodyMedium_PWhite_Btn_15"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/space_48"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_12"
                 android:background="@drawable/bg_selector_black100_and_white_stroke"
                 android:gravity="center"
-                android:text="Page"
-                android:paddingHorizontal="@dimen/space_12"
+                android:text="16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/flipType" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/flipShift"
                 style="@style/BodyMedium_PWhite_Btn_15"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/space_48"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_16"
                 android:background="@drawable/bg_selector_black100_and_white_stroke"
                 android:gravity="center"
-                android:text="Horizontal"
-                android:paddingHorizontal="@dimen/space_12"
+                android:text="16"
                 app:layout_constraintStart_toEndOf="@id/flipTurnPage"
                 app:layout_constraintTop_toTopOf="@id/flipTurnPage" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/flipScroll"
                 style="@style/BodyMedium_PWhite_Btn_15"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/space_48"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_16"
                 android:background="@drawable/bg_selector_black100_and_white_stroke"
                 android:gravity="center"
-                android:text="Vertical"
-                android:paddingHorizontal="@dimen/space_12"
+                android:text="16"
                 app:layout_constraintStart_toEndOf="@id/flipShift"
                 app:layout_constraintTop_toTopOf="@id/flipShift" />
 

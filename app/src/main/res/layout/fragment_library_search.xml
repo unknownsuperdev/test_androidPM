@@ -8,7 +8,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <com.fiction.me.customviews.ToolbarMain
+    <com.name.jat.customviews.ToolbarMain
         android:id="@+id/toolBar"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
@@ -105,14 +105,14 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tryNewSearch"
-            style="@style/Light_14"
+            style="@style/Regular_14"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/space_48"
             android:gravity="center"
             android:text="@string/try_a_new_search" />
     </LinearLayout>
 
-    <com.fiction.me.customviews.BooksWithReadProgressPagingView
+    <com.name.jat.customviews.BooksWithReadProgressView
         android:id="@+id/currentReadBooks"
         android:layout_width="@dimen/space_0"
         android:layout_height="@dimen/space_0"

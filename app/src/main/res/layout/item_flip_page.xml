@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/title"-->
-<!--        style="@style/BodyMedium_20_PWhite"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/space_48"-->
-<!--        android:layout_marginBottom="@dimen/space_16"-->
-<!--        android:gravity="center"-->
-<!--        android:text="vsljvsa"-->
-<!--        android:visibility="visible"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
+    android:layout_height="match_parent"
+    >
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/message"
-        style="@style/Content_PTSerif_15"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_0"
-        android:lineSpacingMultiplier="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        style="@style/Content_PTSerif_15"
+        android:lineSpacingMultiplier="1">
+    </androidx.appcompat.widget.AppCompatTextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <com.fiction.me.customviews.ToolbarMain
+    <com.name.jat.customviews.ToolbarMain
         android:id="@+id/toolBar"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
@@ -83,25 +83,6 @@
         tools:textColor="@color/black"
         tools:visibility="visible" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/customSnackBar"
-        style="@style/Body_SemiBold_16"
-        android:layout_width="@dimen/space_0"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/space_26"
-        android:layout_marginTop="@dimen/space_56"
-        android:background="@drawable/bg_save_library"
-        android:drawableStart="@drawable/ic_done"
-        android:drawablePadding="@dimen/space_10"
-        android:gravity="center_vertical"
-        android:minHeight="@dimen/space_56"
-        android:padding="@dimen/space_16"
-        android:text="@string/saved_library"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/noResultLayout"
         android:layout_width="wrap_content"
@@ -124,14 +105,14 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tryNewSearch"
-            style="@style/Light_14"
+            style="@style/Regular_14"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/space_48"
             android:gravity="center"
             android:text="@string/try_a_new_search" />
     </LinearLayout>
 
-    <com.fiction.me.customviews.BooksInfoViewWithPaging
+    <com.name.jat.customviews.BooksInfoView
         android:id="@+id/booksView"
         android:layout_width="@dimen/space_0"
         android:layout_height="@dimen/space_0"

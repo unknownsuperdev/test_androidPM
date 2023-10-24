@@ -3,177 +3,338 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/splashScreenFragment">
-
-    <include app:graph="@navigation/nav_orders" />
+    app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="ru.tripster.guide.ui.MainFragment"
-        android:label="MainFragment" />
+        android:id="@+id/exploreFragment"
+        android:name="com.name.jat.ui.fragments.explore.ExploreFragment"
+        android:label="fragment_followers"
+        tools:layout="@layout/fragment_explore">
 
+        <action
+            android:id="@+id/action_exploreFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_allGenresFragment"
+            app:destination="@id/allGenresFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_suggestBookSeeAllFragment"
+            app:destination="@id/suggestBookSeeAllFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="ru.tripster.guide.ui.fragments.splashScreen.SplashScreenFragment"
-        android:label="SplashScreenFragment"
-        tools:layout="@layout/fragment_splash_screen">
-
+        android:id="@+id/bookSummaryFragment"
+        android:name="com.name.jat.ui.fragments.booksummmary.BookSummaryFragment"
+        android:label="BookSummaryFragment">
+        <argument
+            android:name="itemId"
+            app:argType="long" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true" />
-
+            android:id="@+id/action_bookSummaryFragment_to_addedToLibraryFragment"
+            app:destination="@id/addedToLibraryFragment" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_main_fragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true">
-
-            <argument
-                android:name="deepLinkOrderId"
-                android:defaultValue="0"
-                app:argType="integer" />
-        </action>
-
+            android:id="@+id/action_bookSummaryFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_bookSummaryFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
+            android:id="@+id/action_bookSummaryFragment_to_suggestBookSeeAllFragment"
+            app:destination="@id/suggestBookSeeAllFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allGenresFragment"
+        android:name="com.name.jat.ui.fragments.explore.geners.AllGenresFragment"
+        android:label="AllGenresFragment" >
+        <action
+            android:id="@+id/action_allGenresFragment_to_booksByGenresFragment"
+            app:destination="@id/booksByGenresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterByPopularTagsFragment"
+        android:name="com.name.jat.ui.fragments.explore.filterbytag.FilterByPopularTagsFragment"
+        android:label="FilterByPopularTagsFragment">
+        <action
+            android:id="@+id/action_filterByPopularTagsFragment_to_filteredBooksFragment"
+            app:destination="@id/filteredBooksFragment" />
 
     </fragment>
-
+    <fragment
+        android:id="@+id/filteredBooksFragment"
+        android:name="com.name.jat.ui.fragments.explore.filterbytag.FilteredBooksFragment"
+        android:label="FilteredBooksFragment" >
+        <action
+            android:id="@+id/action_filteredBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.name.jat.ui.fragments.search.SearchMainFragment"
+        android:label="LibraryFragment" >
+        <action
+            android:id="@+id/action_libraryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_libraryFragment_to_filterByPopularTagsFragment"
+            app:destination="@id/filterByPopularTagsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapterListBottomDialog"
+        android:name="com.name.jat.ui.fragments.chapterlist.ChapterListBottomDialog"
+        android:label="ChapterListBottomDialog" />
+    <fragment
+        android:id="@+id/booksByGenresFragment"
+        android:name="com.name.jat.ui.fragments.explore.geners.BooksByGenresFragment"
+        android:label="BooksByGenresFragment" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_booksByGenresFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainLibraryFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.MainLibraryFragment"
+        android:label="MainLibraryFragment" >
+        <action
+            android:id="@+id/action_mainLibrary_to_contextMenuBottomDialog"
+            app:destination="@id/contextMenuActionBottomDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/allCurrentReadBooksFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.AllCurrentReadBooksFragment"
+        android:label="AllCurrentReadBooksFragment" >
+        <action
+            android:id="@+id/action_allCurrentReadBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
     <dialog
-        android:id="@+id/chooseTimeBottomSheet"
-        android:name="ru.tripster.guide.ui.fragments.confirmOrder.ChooseTimeBottomSheet"
-        android:label="ChooseTimeBottomSheet">
+        android:id="@+id/contextMenuActionBottomDialog"
+        android:name="com.name.jat.ui.fragments.mainlibrary.bottomdialog.ContextMenuActionBottomDialog"
+        android:label="ContextMenuActionBottomDialog" >
         <argument
-            android:name="time"
-            app:argType="string" />
-
-        <argument
-            android:name="isFromCloseTime"
-            app:argType="boolean" />
-
-        <argument
-            android:name="listStartTime"
-            app:argType="string" />
-
-        <argument
-            android:name="startTime"
-            app:argType="string" />
-
-        <argument
-            android:name="endTime"
-            app:argType="string" />
-
-        <deepLink app:uri="android-app://androidx.navigation/choose_time_bottom_sheet/time{time}/isFromCloseTime={isFromCloseTime}/listStartTime{listStartTime}/startTime{startTime}/endTime{endTime}" />
-
+            android:name="id"
+            app:argType="long" />
     </dialog>
-
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="ru.tripster.guide.ui.fragments.authorization.login.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
+        android:id="@+id/librarySearchFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.LibrarySearchFragment"
+        android:label="LibrarySearchFragment" />
+    <fragment
+        android:id="@+id/finishedFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.finished.FinishedBooksFragment"
+        android:label="FinishedFragment" />
+    <fragment
+        android:id="@+id/seeAllFinishedBooksFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.finished.SeeAllFinishedBooksFragment"
+        android:label="SeeAllFinishedBooksFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_main_fragment"
-            app:destination="@id/mainFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true">
-
-            <argument
-                android:name="deepLinkOrderId"
-                android:defaultValue="0"
-                app:argType="integer" />
-        </action>
-
+            android:id="@+id/action_seeAllFinishedBooksFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browsingHistoryFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.browsinghistory.BrowsingHistoryFragment"
+        android:label="BrowsingHistoryFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_menuDebugFragment"
-            app:destination="@id/menuDebugFragment" />
+            android:id="@+id/action_browsingHistoryFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+        <action
+            android:id="@+id/action_browsingHistoryFragment_to_contextMenuHistoryBottomDialog"
+            app:destination="@id/contextMenuHistoryBottomDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/browsingHistorySearchFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.browsinghistory.BrowsingHistorySearchFragment"
+        android:label="BrowsingHistorySearchFragment" >
+        <action
+            android:id="@+id/action_browsingHistorySearchFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/contextMenuHistoryBottomDialog"
+        android:name="com.name.jat.ui.fragments.mainlibrary.bottomdialog.ContextMenuHistoryBottomDialog"
+        android:label="ContextMenuHistoryBottomDialog" >
         <argument
-            android:name="deepLinkOrderId"
-            app:argType="integer" />
+            android:name="id"
+            app:argType="long" />
+    </dialog>
+    <fragment
+        android:id="@+id/downloadedBooksFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.downloaded.DownloadedBooksFragment"
+        android:label="DownloadedBooksFragment" >
+        <action
+            android:id="@+id/action_downloadedBooksFragment_to_contextMenuDownloadedBottomDialog"
+            app:destination="@id/contextMenuDownloadedBottomDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/downloadedBooksSearchFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.downloaded.DownloadedBooksSearchFragment"
+        android:label="DownloadedBooksSearchFragment" />
+    <dialog
+        android:id="@+id/contextMenuDownloadedBottomDialog"
+        android:name="com.name.jat.ui.fragments.mainlibrary.bottomdialog.ContextMenuDownloadedBottomDialog"
+        android:label="ContextMenuDownloadedBottomDialog" >
         <argument
-            android:name="userInfo"
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="type"
             app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/addedToLibraryFragment"
+        android:name="com.name.jat.ui.fragments.mainlibrary.addedtolibrary.AddedToLibraryFragment"
+        android:label="AddedToLibraryFragment" />
+    <fragment
+        android:id="@+id/readerFragment"
+        android:name="com.name.jat.ui.fragments.reader.ReaderFragment"
+        android:label="ReaderFragment" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.name.jat.ui.fragments.reader.ReportFragment"
+        android:label="ReportFragment" />
+    <fragment
+        android:id="@+id/otherReportFragment"
+        android:name="com.name.jat.ui.fragments.reader.OtherReportFragment"
+        android:label="OtherReportFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.name.jat.ui.fragments.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_purchaseHistoryFragment"
+            app:destination="@id/purchaseHistoryFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.name.jat.ui.fragments.profile.settings.SettingsFragment"
+        android:label="SettingsFragment" >
         <argument
-            android:name="isSavedUser"
+            android:name="isNotRegistered"
             app:argType="boolean" />
-
-        <argument
-            android:name="deeplinkPrefix"
-            android:defaultValue=""
-            app:argType="string" />
-
         <action
-            android:id="@+id/action_loginFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true" />
-
-        <deepLink app:uri="android-app://androidx.navigation/login_fragment/deepLinkOrderId={deepLinkOrderId}/userInfo{userInfo}/isSavedUser={isSavedUser}" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/menuDebugFragment"
-        android:name="ru.tripster.guide.ui.fragments.menudebug.MenuDebugFragment"
-        android:label="MenuDebugFragment">
+            android:id="@+id/action_settingsFragment_to_dataStorageFragment"
+            app:destination="@id/dataStorageFragment" />
         <action
-            android:id="@+id/action_menuDebugFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_settingsFragment_to_readingModeFragment"
+            app:destination="@id/readingModeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_autoUnlockFragment"
+            app:destination="@id/autoUnlockFragment" />
     </fragment>
     <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="ru.tripster.guide.ui.fragments.notifications.NotificationsFragment"
-        android:label="NotificationsFragment">
-        <argument
-            android:name="deepLinkOrderId"
-            android:defaultValue="0"
-            app:argType="integer" />
-
-        <argument
-            android:name="isLoggedIn"
-            app:argType="boolean" />
-
-        <argument
-            android:name="deeplinkPrefix"
-            android:defaultValue=""
-            app:argType="string" />
-
+        android:id="@+id/dataStorageFragment"
+        android:name="com.name.jat.ui.fragments.profile.settings.DataStorageFragment"
+        android:label="DataStorageFragment" />
+    <fragment
+        android:id="@+id/autoUnlockFragment"
+        android:name="com.name.jat.ui.fragments.profile.settings.AutoUnlockFragment"
+        android:label="AutoUnlockFragment" />
+    <fragment
+        android:id="@+id/readingModeFragment"
+        android:name="com.name.jat.ui.fragments.profile.settings.ReadingModeFragment"
+        android:label="ReadingModeFragment" />
+    <fragment
+        android:id="@+id/purchaseHistoryFragment"
+        android:name="com.name.jat.ui.fragments.profile.purchasehistory.PurchaseHistoryFragment"
+        android:label="PurchaseHistoryFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.name.jat.ui.fragments.profile.editprofile.EditProfileFragment"
+        android:label="EditProfileFragment" >
         <action
-            android:id="@+id/action_notificationsFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_notificationsFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true">
-            <argument
-                android:name="deepLinkOrderId"
-                android:defaultValue="0"
-                app:argType="integer" />
-        </action>
-
-        <action
-            android:id="@+id/action_notificationsFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/nav_main"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_editProfileFragment_to_cropImageFragment"
+            app:destination="@id/cropImageFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/cropImageFragment"
+        android:name="com.name.jat.ui.fragments.profile.editprofile.CropImageFragment"
+        android:label="CropImageFragment" >
+        <argument
+            android:name="imageUri"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/suggestBookSeeAllFragment"
+        android:name="com.name.jat.ui.fragments.explore.SuggestBookSeeAllFragment"
+        android:label="SuggestBookSeeAllFragment" >
+        <action
+            android:id="@+id/action_suggestBookSeeAllFragment_to_bookSummaryFragment"
+            app:destination="@id/bookSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_selectGenderFragment"
+            app:destination="@id/selectGenderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectGenderFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.SelectGenderFragment"
+        android:label="SelectGenderFragment" >
+        <action
+            android:id="@+id/action_selectGenderFragment_to_pickReadingTimeFragment"
+            app:destination="@id/pickReadingTimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickReadingTimeFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.PickReadingTimeFragment"
+        android:label="PickReadingTimeFragment" >
+        <action
+            android:id="@+id/action_pickReadingTimeFragment_to_chooseFavoriteThemeFragment"
+            app:destination="@id/chooseFavoriteThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFavoriteThemeFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.ChooseFavoriteThemeFragment"
+        android:label="ChooseFavoriteThemeFragment" >
+        <action
+            android:id="@+id/action_chooseFavoriteThemeFragment_to_analyzeNovelFragment"
+            app:destination="@id/analyzeNovelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analyzeNovelFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.AnalyzeNovelFragment"
+        android:label="AnalyzeNovelFragment" >
+        <action
+            android:id="@+id/action_analyzeNovelFragment_to_selectionBooksFragment"
+            app:destination="@id/selectionBooksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionBooksFragment"
+        android:name="com.name.jat.ui.fragments.onboarding.SelectionBooksFragment"
+        android:label="SelectionBooksFragment" >
+        <action
+            android:id="@+id/action_selectionBooksFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_selectionBooksFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
+    </fragment>
 </navigation>

@@ -1,10 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'androidx.navigation.safeargs'
-    id 'com.google.gms.google-services'
-//    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
-    id 'com.google.firebase.crashlytics'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -26,23 +23,16 @@ android {
     }
 
     flavorDimensions "named"
-    productFlavors {
-        dev {
-            dimension = "named"
+    productFlavors{
+        dev{
+            dimension ="named"
             buildConfigField "String", "API_KEY", '"TEST_KEY"'
             buildConfigField "String", "API_URL", '"TEST_URL"'
-            resValue "string", "BASE_URL", '"https://experience.staging.k8s-dev.tripster.ru/api/"'
-            resValue "string", "deep_link", "experience.staging.k8s-dev.tripster.ru"
-            resValue "string", "asset_link", "https://experience.staging.k8s-dev.tripster.ru/.well-known/assetlinks.json"
-
         }
-        prod {
-            dimension = "named"
+        prod{
+            dimension ="named"
             buildConfigField "String", "API_KEY", '"TEST_KEY"'
             buildConfigField "String", "API_URL", '"TEST_URL"'
-            resValue "string", "BASE_URL", '"https://experience.tripster.ru/"'
-            resValue "string", "deep_link", "experience.tripster.ru"
-            resValue "string", "asset_link", "https://experience.tripster.ru/.well-known/assetlinks.json"
         }
     }
 
@@ -63,38 +53,27 @@ dependencies {
     implementation project(path: ':domain')
     implementation project(path: ':di')
     implementation project(path: ':core')
-    testImplementation(test.junit)
-    testImplementation(test.coroutinesTest)
-    testImplementation(test.koinTest)
-    testImplementation(androidTest.archCoreTesting)
-    androidTestImplementation(androidTest.androidxJunit)
-    androidTestImplementation(androidTest.androidxEspressoCore)
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation (test.junit)
+    testImplementation (test.coroutinesTest)
+    testImplementation (test.koinTest)
+    testImplementation (androidTest.archCoreTesting)
+    androidTestImplementation (androidTest.androidxJunit)
+    androidTestImplementation (androidTest.androidxEspressoCore)
 
     implementation(androidXLibraries.appCompat)
     implementation(androidXLibraries.coreKtx)
     implementation(androidXLibraries.legacySupport)
     implementation(androidXLibraries.navigationFragmentKtx)
     implementation(androidXLibraries.navigationUiKtx)
+    implementation(androidXLibraries.lifecycleCommon)
     implementation(androidXLibraries.constraintLayout)
-    implementation(androidXLibraries.paging)
     implementation(libraries.material)
     implementation(libraries.koinAndroid)
     implementation(libraries.glide)
-    implementation(libraries.shimmer)
-//    implementation(libraries.googleMap)
-
-    implementation platform('com.google.firebase:firebase-bom:31.1.0')
-
-    implementation(libraries.firebaseCrashlytics)
-    implementation(libraries.firebaseBom)
-    implementation(libraries.firebaseAnalyticsKtx)
-    implementation(libraries.firebaseAnalytics)
-    implementation(libraries.amplitude)
-    implementation(libraries.squareup)
-    implementation(libraries.gsonConverter)
-
-    implementation(libraries.mindbox)
-    implementation(libraries.mindboxFirebase)
-    implementation(libraries.firebaseMessaging)
-
+    implementation(libraries.swiperecycler)
+    implementation (libraries.flexbox)
+    implementation (libraries.viewPager)
+    implementation (libraries.imageCropper)
 }

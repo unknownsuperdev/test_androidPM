@@ -6,8 +6,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageSlide"
-        android:layout_width="@dimen/space_200"
-        android:layout_height="@dimen/space_272"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="@dimen/space_164"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,26 +17,12 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/book_effect"
-        android:layout_width="@dimen/space_0"
-        android:layout_height="@dimen/space_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/ic_book_effect"
         app:layout_constraintBottom_toBottomOf="@id/imageSlide"
         app:layout_constraintEnd_toEndOf="@id/imageSlide"
         app:layout_constraintStart_toStartOf="@id/imageSlide"
         app:layout_constraintTop_toTopOf="@id/imageSlide" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/bestseller"
-        style="@style/Caption_11_Bold_Black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_12"
-        android:background="@drawable/finished_progress_bar"
-        android:padding="@dimen/space_8"
-        app:layout_constraintEnd_toEndOf="@id/imageSlide"
-        app:layout_constraintTop_toTopOf="@id/imageSlide"
-        android:layout_marginEnd="@dimen/space_8"
-        app:layout_goneMarginTop="@dimen/space_8"
-        android:text="@string/bestseller_onboarding" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.fiction.me.customviews.ToolbarMain
+    <com.name.jat.customviews.ToolbarMain
         android:id="@id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/clearCache"
-        style="@style/BodyBold_Medium_500_purple600"
+        style="@style/BodyBold_Medium_500_purple600_Btn"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/space_26"

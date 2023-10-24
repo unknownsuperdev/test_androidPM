@@ -7,6 +7,24 @@
     android:background="@color/primary_white">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/share"
+        style="@style/Body_SemiBold_16_Black"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:background="@drawable/bg_selector_dark_and_white"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_share_black_100"
+        android:drawablePadding="@dimen/space_12"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_12"
+        android:text="@string/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/report"
         style="@style/Body_SemiBold_16_Black"
         android:layout_width="@dimen/space_0"
@@ -19,9 +37,9 @@
         android:gravity="center_vertical"
         android:paddingStart="@dimen/space_12"
         android:text="@string/report"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/share"
+        app:layout_constraintStart_toStartOf="@id/share"
+        app:layout_constraintTop_toBottomOf="@id/share"
         tools:ignore="RtlSymmetry" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     <item>
         <shape
             android:shape="ring"
-            android:thicknessRatio="70"
+            android:thicknessRatio="16"
             android:useLevel="false">
             <solid android:color="@color/secondary_violet_200" />
         </shape>
@@ -14,28 +14,28 @@
             android:toDegrees="270">
             <shape
                 android:shape="ring"
-                android:thicknessRatio="70"
+                android:thicknessRatio="16"
                 android:useLevel="true">
                 <solid android:color="@color/secondary_purple_500" />
             </shape>
         </rotate>
     </item>
-    <item android:bottom="205dp">
+    <item android:bottom="219dp">
         <shape
             android:innerRadiusRatio="1000"
             android:shape="ring"
-            android:thickness="1.7dp"
+            android:thickness="8.9dp"
             android:useLevel="false">
             <solid android:color="@color/secondary_purple_500" />
         </shape>
     </item>
-    <item>
+   <item>
         <rotate>
-            <inset android:insetBottom="205dp">
+            <inset android:insetBottom="219dp">
                 <shape
                     android:innerRadiusRatio="1000"
                     android:shape="ring"
-                    android:thickness="1.7dp"
+                    android:thickness="8.5dp"
                     android:useLevel="false">
                     <solid android:color="@color/secondary_purple_500" />
                 </shape>
@@ -43,3 +43,4 @@
         </rotate>
     </item>
 </layer-list>
+

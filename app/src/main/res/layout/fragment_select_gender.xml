@@ -20,13 +20,13 @@
         android:id="@+id/male"
         android:layout_width="@dimen/space_0"
         android:layout_height="@dimen/space_144"
+        android:layout_marginTop="@dimen/space_40"
         android:background="@drawable/selector_field"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@id/female"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/title">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -34,8 +34,7 @@
             android:src="@drawable/ic_male" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/maleTxt"
-            style="@style/Body_Regular_16_PWhite"
+            style="@style/Body_Regular_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_16"
@@ -60,8 +59,7 @@
             android:src="@drawable/ic_female" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/femaleTxt"
-            style="@style/Body_Regular_16_PWhite"
+            style="@style/Body_Regular_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_16"
@@ -86,8 +84,7 @@
             android:src="@drawable/ic_gender_other" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/otherTxt"
-            style="@style/Body_Regular_16_PWhite"
+            style="@style/Body_Regular_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_16"

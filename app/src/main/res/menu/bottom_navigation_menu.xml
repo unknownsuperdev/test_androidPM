@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_orders"
-        android:icon="@drawable/order_icon_selector"
-        android:title="@string/order"/>
+        android:id="@+id/item_explore"
+        android:enabled="true"
+        android:icon="@drawable/explore_icon_selector"
+        android:title="@string/explore"/>
     <item
-        android:id="@+id/nav_calendar"
-        android:icon="@drawable/calendar_icon_selector"
-        android:title="@string/calendar"/>
+        android:id="@+id/item_library"
+        android:enabled="true"
+        android:icon="@drawable/library_icon_selector"
+        android:title="@string/library"/>
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/item_profile"
+        android:enabled="true"
         android:icon="@drawable/profile_icon_selector"
         android:title="@string/profile"/>
+
+
 
 </menu>

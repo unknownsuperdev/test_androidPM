@@ -47,6 +47,8 @@ captures/
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 .cxx/
+# Google Services (e.g. APIs or Firebase)
+google-services.json
 # Freeline
 freeline.py
 freeline/
@@ -70,4 +72,3 @@ lint/tmp/
 # App Specific cases 
 app/release/output.json
 .idea/codeStyles/
-.idea

@@ -12,7 +12,7 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapseToolbar"
-            style="@style/AppTheme"
+            style="@style/AppDarkTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"

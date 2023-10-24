@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         style="@style/Headings_h2_Medium"
-        android:text="@string/chapters_0"
+        android:text="@string/chapter"
         android:paddingStart="@dimen/space_16"
         android:layout_marginTop="@dimen/space_12"
         app:layout_constraintStart_toStartOf="parent"

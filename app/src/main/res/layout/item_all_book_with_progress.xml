@@ -28,24 +28,23 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/bookTitle"
         style="@style/Body_SemiBold_16"
-        android:layout_width="@dimen/space_0"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/size_16"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bookEffect"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Last Movie" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/description"
-        style="@style/Light_14"
+        style="@style/Regular_14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/size_16"
         android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:gravity="start"
-
+        android:maxLines="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/bookCover"
         app:layout_constraintTop_toBottomOf="@id/bookTitle" />

@@ -10,6 +10,7 @@
         android:layout_height="@dimen/space_64"
         android:layout_marginStart="@dimen/space_24"
         android:layout_marginTop="@dimen/space_16"
+        android:src="@drawable/book_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +28,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/genre"
-        style="@style/Caption_14_Light_Dark_White_Roboto_300"
+        style="@style/Caption_14_Medium_Dark_White_Roboto_300"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
         android:text="Fantasy, Romance"
@@ -60,6 +61,34 @@
         app:layout_constraintTop_toBottomOf="@id/line" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/download"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_download"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_12"
+        android:text="@string/download"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addToLibrary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/share"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_share_book"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_12"
+        android:text="@string/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/download" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/delete"
         style="@style/Body_SemiBold_16"
         android:layout_width="@dimen/space_0"
@@ -68,9 +97,9 @@
         android:drawablePadding="@dimen/space_20"
         android:gravity="center_vertical"
         android:paddingStart="@dimen/space_12"
-        android:text="@string/delete_from_lib"
+        android:text="@string/delete_from_history"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addToLibrary" />
+        app:layout_constraintTop_toBottomOf="@id/share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

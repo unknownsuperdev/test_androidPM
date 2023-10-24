@@ -25,7 +25,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/saleTxt"
-        style="@style/Caption_12_Bold_Black100"
+        style="@style/Caption_12_Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_8"
@@ -42,32 +42,30 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_8"
         android:src="@drawable/ic_add_library"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/book_cover"
         app:layout_constraintEnd_toEndOf="@id/book_cover" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/book_title"
         style="@style/Body_SemiBold_16"
-        android:layout_width="@dimen/space_0"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/size_16"
-        android:ellipsize="end"
         android:text="Last Movie"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/book_effect"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/description"
-        style="@style/Light_14"
+        style="@style/Regular_14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/size_16"
         android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:gravity="start"
+        android:maxLines="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_cover"
         app:layout_constraintTop_toBottomOf="@id/book_title" />
@@ -82,7 +80,7 @@
         android:drawableStart="@drawable/ic_eye"
         android:drawablePadding="@dimen/space_8"
         android:gravity="center"
-        android:paddingHorizontal="@dimen/space_8"
+        android:paddingHorizontal="@dimen/space_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_effect" />
 
@@ -96,7 +94,7 @@
         android:drawableStart="@drawable/ic_favorite_gray"
         android:drawablePadding="@dimen/space_8"
         android:gravity="center"
-        android:paddingHorizontal="@dimen/space_8"
+        android:paddingHorizontal="@dimen/space_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_views" />
 

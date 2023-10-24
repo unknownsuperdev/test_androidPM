@@ -1,16 +1,315 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TripsterGuide" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Jat" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/heliotrope</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="AppDarkTheme" parent="Theme.Jat">
+        <item name="android:background">@color/black_100</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.SecondaryColor.White" parent="">
+        <item name="colorSecondary">@color/primary_white</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Background.Color.Black300" parent="">
+        <item name="android:background">@color/black_300</item>
+    </style>
+
+    <style name="Headings_h2" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="fontFamily">@font/roboto_bold_700</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Headings_h1" parent="Headings_h2">
+        <item name="android:textSize">@dimen/size_26</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+        <item name="android:lineSpacingExtra">@dimen/size_2</item>
+    </style>
+
+    <style name="Headings_h1_roboto_700" parent="Headings_h1">
+        <item name="fontFamily">@font/roboto_bold_700</item>
+    </style>
+    <style name="Headings_h1_32_roboto_700" parent="Headings_h1_roboto_700">
+        <item name="android:textSize">@dimen/size_32</item>
+    </style>
+
+    <style name="Headings_h3" parent="Headings_h1">
+        <item name="android:textSize">@dimen/size_20</item>
+    </style>
+
+    <style name="BodyBold" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/size_16</item>
+        <item name="android:textColor">@color/secondary_purple</item>
+        <item name="fontFamily">@font/roboto_bold_700</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="BodyMedium_White" parent="BodyBold">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+    </style>
+
+    <style name="BodyMedium_White_20" parent="BodyMedium_White">
+        <item name="android:textSize">@dimen/size_20</item>
+    </style>
+
+    <style name="BodyMedium_Selector_White_White800" parent="BodyMedium_White">
+        <item name="android:textColor">@color/selector_primary_white_and_white800</item>
+    </style>
+
+    <style name="Caption_14_Medium" parent="BodyBold">
+        <item name="android:textSize">@dimen/size_14</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:lineSpacingExtra">@dimen/size_5</item>
+    </style>
+
+    <style name="BodyBold_Medium_500_purple600_Btn" parent="BodyBold">
+        <item name="android:textColor">@color/secondary_purple_dark_600</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="BodyBold_Medium_500_purple600" parent="BodyBold_Medium_500_purple600_Btn">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Caption_14_Medium_500" parent="Caption_14_Medium">
+        <item name="fontFamily">@font/roboto_medium_500</item>
+    </style>
+
+    <style name="Caption_14_Medium_Gray" parent="BodyMedium_White">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="Caption_13_Medium_Gray700" parent="BodyMedium_White">
+        <item name="android:textSize">@dimen/size_13</item>
+        <item name="android:textColor">@color/gray_700</item>
+    </style>
+
+    <style name="Caption_14_Medium_Black600" parent="BodyMedium_White">
+        <item name="android:textColor">@color/black_600</item>
+    </style>
+
+    <style name="Caption_14_Medium_Black700" parent="Caption_14_Medium_Gray">
+        <item name="android:textColor">@color/black_700</item>
+    </style>
+
+    <style name="Caption_12_Bold" parent="Caption_14_Medium">
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textColor">@color/black_100</item>
+        <item name="fontFamily">@font/roboto_bold_700</item>
+    </style>
+
+    <style name="Caption_12_Medium" parent="Caption_12_Bold">
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+        <item name="android:lineSpacingExtra">@dimen/size_3</item>
+    </style>
+
+    <style name="Caption_L_Medium_Gray" parent="Caption_14_Medium">
+        <item name="android:textColor">@drawable/selector_genre_text_color</item>
+    </style>
+
+    <style name="Caption_L_Medium_Selector_Gray_White" parent="Caption_14_Medium">
+        <item name="android:textColor">@drawable/selector_all_genre_text_color</item>
+    </style>
+
+    <style name="Caption_14_Medium_White_Roboto_500" parent="Caption_14_Medium">
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+    </style>
+
+    <style name="Caption_14_Medium_Gray_Roboto_500" parent="Caption_14_Medium_White_Roboto_500">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="Body_SemiBold_14" parent="BodyMedium_White">
+        <item name="android:textSize">@dimen/size_14</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="android:lineSpacingExtra">@dimen/size_6</item>
+    </style>
+
+    <style name="Title_SemiBold_Btn" parent="Body_SemiBold_14">
+        <item name="android:textSize">@dimen/size_18</item>
+        <item name="android:lineSpacingExtra">@dimen/size_3</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title_Medium_primary_white_18" parent="Body_SemiBold_14">
+        <item name="android:textSize">@dimen/size_18</item>
+    </style>
+
+    <style name="Body_SemiBold_16" parent="Body_SemiBold_14">
+        <item name="android:textSize">@dimen/size_16</item>
+    </style>
+
+    <style name="Body_SemiBold_16_Black" parent="Body_SemiBold_14">
+        <item name="android:textColor">@color/black_400</item>
+    </style>
+
+    <style name="Medium_16" parent="Body_SemiBold_14">
+        <item name="android:textSize">@dimen/size_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/roboto_medium_500</item>
+    </style>
+
+    <style name="Regular_14" parent="BodyMedium_White">
+        <item name="fontFamily">@font/roboto_light_300</item>
+        <item name="android:lineSpacingExtra">@dimen/size_4</item>
+    </style>
+
+    <style name="NumTextStyle" parent="BodyMedium_White">
+        <item name="android:textSize">@dimen/size_10</item>
+    </style>
+
+    <style name="MyBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/MYBottomSheetStyle</item>
+    </style>
+
+    <style name="MYBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">356dp</item>
+        <item name="maxHeight">356dp</item>
+    </style>
+
+    <style name="Content_PTSerif_15" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/ptserif_regular</item>
+        <item name="android:lineSpacingExtra">@dimen/size_9</item>
+    </style>
+
+    <style name="Headings_h2_Medium" parent="Headings_h2">
+        <item name="fontFamily">@font/roboto_medium_500</item>
+    </style>
+
+    <style name="BodyMedium_20_DarkWhite" parent="BodyMedium_White">
+        <item name="android:textColor">@color/dark_white_800</item>
+    </style>
+
+    <style name="Body_SemiBold_14_Btn" parent="BodyMedium_White">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Body_Regular_16" parent="Body_SemiBold_16">
+        <item name="android:textColor">@color/heliotrope</item>
+        <item name="fontFamily">@font/roboto_regular_400</item>
+    </style>
+
+    <style name="Body_Regular_16_purple600" parent="Body_Regular_16">
+        <item name="android:textColor">@color/secondary_purple_dark_600</item>
+    </style>
+
+    <style name="Body_Regular_16_White" parent="Body_SemiBold_16">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Body_Regular_16_Gray" parent="Body_SemiBold_16">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="BodyMedium_black600_14_Btn" parent="Body_SemiBold_14">
+        <item name="android:textColor">@color/black_600</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="BodyMedium_black600_pWhite_14_Btn" parent="BodyMedium_black600_14_Btn">
+        <item name="android:textColor">@color/selector_primary_white_and_black600</item>
+    </style>
+
+    <style name="CustomProgressStyle" >
+        <item name="android:indeterminateDrawable">@drawable/progress_rotate_item</item>
+        <item name="android:minWidth">@dimen/space_16</item>
+        <item name="android:maxWidth">@dimen/space_16</item>
+        <item name="android:minHeight">@dimen/space_16</item>
+        <item name="android:maxHeight">@dimen/space_16</item>
+    </style>
+
+    <style name="Caption_18_Medium_PWhite" parent="Caption_12_Medium">
+        <item name="android:textSize">@dimen/size_18</item>
+        <item name="android:textColor">@color/primary_white</item>
+    </style>
+
+    <style name="BodyMedium_PWhite_Btn_15" parent="BodyMedium_White">
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="BodyMedium_PWhite_Btn_16" parent="BodyMedium_PWhite_Btn_15">
+        <item name="android:textSize">@dimen/size_16</item>
+    </style>
+
+    <style name="BodyMedium_Black_Btn" parent="BodyMedium_White">
+        <item name="android:textColor">@color/black_100</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Caption_12_Medium_PWhite" parent="Caption_12_Medium">
+        <item name="android:textColor">@color/primary_white</item>
+    </style>
+
+    <style name="Caption_14_Medium_Dark_White_Roboto_300" parent="Caption_14_Medium">
+        <item name="android:textColor">@color/dark_white_900</item>
+        <item name="fontFamily">@font/roboto_light_300</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/black_300</item>
+    </style>
+    <style name="CustomBottomSheetStyleBlack400" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/black_400</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogThemeBlack400" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyleBlack400</item>
+    </style>
+
+    <style name="BodyBoldBtn" parent="BodyBold">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText" parent="">
+        <item name="colorPrimary">@color/primary_white</item>
+    </style>
+
+    <style name="SwitchCompatStyle" >
+        <item name="trackTint">@color/track_selector</item>
+    </style>
+
+    <style name="Caption_13_Medium_black_600" parent="BodyMedium_White">
+        <item name="android:textColor">@color/black_600</item>
+        <item name="android:textSize">@dimen/size_13</item>
+        <item name="android:lineSpacingExtra">@dimen/size_5</item>
+    </style>
+
+    <style name="Caption_9_Medium_dark_white_800" parent="BodyMedium_White">
+        <item name="android:textColor">@color/dark_white_800</item>
+        <item name="android:textSize">@dimen/size_9</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.MaterialCardView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/space_4</item>
     </style>
 </resources>

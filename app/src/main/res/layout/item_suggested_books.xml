@@ -25,7 +25,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/sale_txt"
-        style="@style/Caption_12_Bold_Black100"
+        style="@style/Caption_12_Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_8"
@@ -37,16 +37,15 @@
         app:layout_constraintTop_toTopOf="@id/book_picture" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/addLibrary"
+        android:id="@+id/add_library"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_8"
         android:src="@drawable/ic_add_library"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/book_picture"
         app:layout_constraintEnd_toEndOf="@id/book_picture" />
 
-<!--    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/genre_category"
         style="@style/Caption_14_Medium_Gray"
         android:layout_width="0dp"
@@ -55,7 +54,7 @@
         android:text="Fantasy, Romance"
         app:layout_constraintEnd_toEndOf="@id/book_effect"
         app:layout_constraintStart_toStartOf="@id/book_effect"
-        app:layout_constraintTop_toBottomOf="@id/book_effect" />-->
+        app:layout_constraintTop_toBottomOf="@id/book_effect" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
@@ -63,9 +62,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Moon light"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@id/book_effect"
-        app:layout_constraintStart_toStartOf="@id/book_effect"
-        app:layout_constraintTop_toBottomOf="@id/book_picture" />
+        app:layout_constraintEnd_toEndOf="@id/genre_category"
+        app:layout_constraintStart_toStartOf="@id/genre_category"
+        app:layout_constraintTop_toBottomOf="@id/genre_category" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

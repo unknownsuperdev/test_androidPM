@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ThemeOverlay.AppTheme.Background.Color.Black300">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/AppDarkTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editProfile"
+            style="@style/Title_Medium_primary_white_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/save"
+            style="@style/Title_Medium_primary_white_18"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/save"
+            android:layout_marginEnd="@dimen/space_16"
+            android:layout_height="wrap_content"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.canhub.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userImage"
+        android:layout_width="@dimen/space_96"
+        android:layout_height="@dimen/space_96"
+        android:background="@drawable/ic_guest_user"
+        android:layout_marginTop="@dimen/space_32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_camera_filled"
+        android:layout_marginTop="@dimen/space_32"
+        android:layout_marginBottom="@dimen/space_2"
+        app:layout_constraintStart_toStartOf="@id/userImage"
+        app:layout_constraintEnd_toEndOf="@id/userImage"
+        app:layout_constraintBottom_toBottomOf="@id/userImage"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editUserName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50"
+        android:layout_marginTop="@dimen/space_32"
+        android:hint="@string/username"
+        app:boxStrokeWidth="@dimen/space_0"
+        app:boxStrokeWidthFocused="@dimen/space_0"
+        android:layout_marginHorizontal="@dimen/space_16"
+        app:endIconDrawable="@drawable/ic_clear"
+        app:endIconMode="clear_text"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        app:boxCollapsedPaddingTop="@dimen/space_5"
+        app:hintTextAppearance="@style/Caption_9_Medium_dark_white_800"
+        app:hintTextColor="@color/dark_white_800"
+        android:textColorHint="@color/primary_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userImage">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            style="@style/Body_SemiBold_16"
+            android:background="@drawable/bg_black400_field"
+            android:textCursorDrawable="@color/primary_white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/clearCache"
+        style="@style/BodyBold_Medium_500_purple600_Btn"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_34"
+        android:gravity="center"
+        android:text="@string/delete_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

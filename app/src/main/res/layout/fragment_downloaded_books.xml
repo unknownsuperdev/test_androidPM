@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.name.jat.customviews.AppbarCustom
+        android:id="@+id/customAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/customSnackBar"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_16"
+        android:layout_marginTop="@dimen/space_48"
+        android:background="@drawable/bg_save_library"
+        android:drawableStart="@drawable/ic_done"
+        android:drawablePadding="@dimen/space_10"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/space_16"
+        android:padding="@dimen/space_12"
+        android:text="@string/_was_downloaded"
+        android:translationZ="@dimen/space_4"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.name.jat.customviews.BooksWithReadProgressView
+                android:id="@+id/currentReadBookView"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.name.jat.customviews.NextInLineBooksView
+                android:id="@+id/nextInLineBooksView"
+                android:layout_width="@dimen/space_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32"
+                android:paddingBottom="@dimen/space_56"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currentReadBookView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

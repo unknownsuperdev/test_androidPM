@@ -16,120 +16,105 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/morning"
         android:layout_width="@dimen/space_0"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="@dimen/space_64"
+        android:layout_marginTop="@dimen/space_40"
+        android:background="@drawable/selector_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/title">
 
-        <LinearLayout
-            android:id="@+id/morning"
-            android:layout_width="@dimen/space_0"
-            android:layout_height="@dimen/space_64"
-            android:background="@drawable/selector_field"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/afternoon">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_20"
+            android:src="@drawable/ic_morning" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_20"
-                android:src="@drawable/ic_morning" />
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Body_Regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/morning" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/morningTxt"
-                style="@style/Body_Regular_16_PWhite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/morning" />
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/afternoon"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_64"
+        android:layout_marginTop="@dimen/space_14"
+        android:background="@drawable/selector_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/morning">
 
-        <LinearLayout
-            android:id="@+id/afternoon"
-            android:layout_width="@dimen/space_0"
-            android:layout_height="@dimen/space_64"
-            android:layout_marginTop="@dimen/space_14"
-            android:background="@drawable/selector_field"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/morning"
-            app:layout_constraintBottom_toTopOf="@id/evening">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_20"
+            android:src="@drawable/ic_afternoon" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_20"
-                android:src="@drawable/ic_afternoon" />
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Body_Regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/afternoon" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/afternoonTxt"
-                style="@style/Body_Regular_16_PWhite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/afternoon" />
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/evening"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_64"
+        android:layout_marginTop="@dimen/space_14"
+        android:background="@drawable/selector_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/afternoon">
 
-        <LinearLayout
-            android:id="@+id/evening"
-            android:layout_width="@dimen/space_0"
-            android:layout_height="@dimen/space_64"
-            android:layout_marginTop="@dimen/space_14"
-            android:background="@drawable/selector_field"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/afternoon"
-            app:layout_constraintBottom_toTopOf="@id/anySpareTime">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_20"
+            android:src="@drawable/ic_evening" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_20"
-                android:src="@drawable/ic_evening" />
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Body_Regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/evening" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/eveningTxt"
-                style="@style/Body_Regular_16_PWhite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/evening" />
-        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/anySpareTime"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_64"
+        android:layout_marginTop="@dimen/space_14"
+        android:background="@drawable/selector_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/evening">
 
-        <LinearLayout
-            android:id="@+id/anySpareTime"
-            android:layout_width="@dimen/space_0"
-            android:layout_height="@dimen/space_64"
-            android:layout_marginTop="@dimen/space_14"
-            android:background="@drawable/selector_field"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/evening">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_20"
+            android:src="@drawable/ic_coffee" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_20"
-                android:src="@drawable/ic_coffee" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/anySpareTimeTxt"
-                style="@style/Body_Regular_16_PWhite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/any_spare_time" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Body_Regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/any_spare_time" />
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/continueBtn"

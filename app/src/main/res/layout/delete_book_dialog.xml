@@ -7,7 +7,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        style="@style/Headings_h3_20"
+        style="@style/Headings_h3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_24"

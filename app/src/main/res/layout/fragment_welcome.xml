@@ -29,7 +29,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/findNovel"
-        style="@style/Body_Regular_16_PWhite"
+        style="@style/Body_Regular_16"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_104"
@@ -42,13 +42,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/unlockChapter"
-        style="@style/Body_Regular_16_PWhite"
+        style="@style/Body_Regular_16"
         android:layout_width="@dimen/space_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_16"
         android:drawableStart="@drawable/ic_open_lock"
         android:drawablePadding="@dimen/space_16"
-        android:text="@string/unlock_your_first_chapters"
+        android:text="@string/find_novels"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/findNovel" />
@@ -65,11 +65,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startBtn"
-        style="@style/Title_SemiBold_16_Btn"
+        style="@style/Title_SemiBold_Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/space_16"
-        android:background="@drawable/main_button"
+        android:background="@drawable/button_shape"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

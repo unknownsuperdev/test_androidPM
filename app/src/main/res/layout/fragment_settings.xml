@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
 
-    <com.fiction.me.customviews.ToolbarMain
+    <com.name.jat.customviews.ToolbarMain
         android:id="@id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -129,21 +129,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/termsOfUse" />
 
-     <androidx.appcompat.widget.AppCompatTextView
-         android:id="@+id/signOut"
-         style="@style/Body_SemiBold_16"
-         android:layout_width="@dimen/space_0"
-         android:layout_height="@dimen/space_48"
-         android:drawableStart="@drawable/ic_sign_out"
-         android:drawableEnd="@drawable/ic_arrow_stroke_gray"
-         android:drawablePadding="@dimen/space_20"
-         android:gravity="center_vertical"
-         android:paddingHorizontal="@dimen/space_12"
-         android:paddingEnd="@dimen/size_12"
-         android:text="@string/sign_out"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@id/privacyPolicy" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signOutOrIn"
+        style="@style/Body_SemiBold_16"
+        android:layout_width="@dimen/space_0"
+        android:layout_height="@dimen/space_48"
+        android:drawableStart="@drawable/ic_sign_out"
+        android:drawableEnd="@drawable/ic_arrow_stroke_gray"
+        android:drawablePadding="@dimen/space_20"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/space_12"
+        android:paddingEnd="@dimen/size_12"
+        android:text="@string/sign_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/privacyPolicy" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/version"
@@ -154,16 +154,6 @@
         android:layout_marginTop="@dimen/space_14"
         android:text="@string/version"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signOut" />
-
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/progressDialog"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/baseDialog"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        app:layout_constraintTop_toBottomOf="@id/signOutOrIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
